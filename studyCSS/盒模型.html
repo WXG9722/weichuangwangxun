@@ -9,26 +9,34 @@
             /* 盒模型 */
             div {
                 width: 200px;
-                height: 200px;
+                height: 20px;
                 background:red;
                 /* box-sizing: content-box; 标准盒模型 width是element的宽度 */
-                /*box-sizing: border-box; 怪异盒模型 width是element + padding + border的宽度
-                IE6及以下版本浏览器不加<!DOCTYPE html>会直接变成怪异盒模型，该版本以上的浏览器将box-sizing的值设置为border-box*/
+                /* box-sizing: border-box; 怪异盒模型 width是element + padding + border的宽度 */
+                /* IE6及以下版本浏览器不加<!DOCTYPE html>会直接变成怪异盒模型，该版本以上的浏览器将box-sizing的值设置为border-box */
                 /* 内边距 顺序：上右下左 */
                 padding: 30px;
                 /* 边框 顺序：上右下左 */
                 border: 5px solid #000;
                 /* 外边距 顺序：上右下左 */
-                margin: 300px;
+                margin: 30px;
+                /* 外边距合并，非嵌套和嵌套关系div上下边距合并为两者中较大的那个 
+                   解决方案 
+                   1.父元素overflow:hidden
+                   2.父元素加border（透明border为transparent）
+                   3.父元素或子元素浮动flow
+                   4.父元素或子元素定位position:absolute
+                */
+                overflow: hidden;/*溢出隐藏*/
+                text-overflow: ellipsis;/*文本溢出 省略号*/
+                white-space: nowrap;/*文字空格不换行*/
+
             }
         </style>
     </head>
     <body>
         <div>
-            哈哈哈哈
-        </div>
-        <div>
-            哈哈哈哈
+            the rain in Spain mainly stay in the plain. the rain in Spain mainly stay in the plain. the rain in Spain mainly stay in the plain.
         </div>
     </body>
 </html>

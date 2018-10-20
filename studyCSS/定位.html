@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <style>
+            div {
+                width: 100px;
+                height: 50px;
+                display: inline-block;
+            }
+            #div1 {
+                background: red;
+            }
+            #div2 {
+                background: green;
+                position: relative;/* 相对定位 相对于自己原来的位置 定位后空间不释放 */
+                left: 50px;
+                top: 50px;
+            }
+            #div3 {
+                background: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="div1">
+            111
+        </div>
+        <div id="div2">
+            222
+        </div>
+        <div id="div3">
+            333
+        </div>
+    </body>
+</html>
