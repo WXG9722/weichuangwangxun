@@ -6,16 +6,22 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>STUDY</title>
         <style>
+            /* 盒模型 */
             div {
                 width: 200px;
                 height: 200px;
                 background:red;
+                /* box-sizing: content-box; 标准盒模型 width是element的宽度 */
+                /* 
+                   box-sizing: border-box; 怪异盒模型 width是element + padding + border的宽度
+                   IE6及以下版本浏览器不加<!DOCTYPE html>会直接变成怪异盒模型
+                */
                 /* 内边距 顺序：上右下左 */
                 padding: 30px;
                 /* 边框 顺序：上右下左 */
                 border: 5px solid #000;
                 /* 外边距 顺序：上右下左 */
-                margin: 10px 5px 15px 20px;
+                margin: 300px;
             }
         </style>
     </head>
