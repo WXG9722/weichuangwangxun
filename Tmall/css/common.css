@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style: none;
+}
+/* banner */
+.banner {
+    background-color: #ff2f7c;
+}
+.banner a {
+    cursor: pointer;
+}
+.banner img {
+    display: block;/*去掉图片下面的小边 将图片设置为块级元素*/
+    margin: 0 auto;/*块元素图片居中*/
+}
+/* header */
+.header {
+    height: 40px;
+    background-color: #f2f2f2;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.30);
+    font: 12px/1.5 tahoma,arial,"\5b8b\4f53";
+    font-family: "Microsoft YaHei", tahoma, arial, 'Hiragino Sans GB', '\5b8b\4f53', sans-serif;
+
+}
+.wrapper {
+    width: 1230px;
+    margin: 0 auto;
+}
+.header-login {
+    height: 40px;
+    line-height: 40px;
+    margin: 0 auto;
+    float: left;
+}
+.header-login em {
+    color: #999;
+    font-style: normal;
+}
+.header-login a {
+    color: #999;
+    text-decoration: none;
+}
+.header-login a:hover {
+    cursor: pointer;
+    color: red;
+}
+.header-list {
+    color: #999;
+    float: right;
+}
+.header-list li {
+    line-height: 40px;
+    float: left;
+}
+.special {
+    padding: 0 14px 0 10px;
+}
+.header-list a {
+    padding: 0 10px 0 10px;
+    border: solid #f2f2f2;
+    border-width: 0 1px;
+    color: #999;
+    text-decoration: none;
+}
+.header-list a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    color: red;
+    background: white;
+}
+.icon-gouwuche1, .icon-tel {
+    color: red;
+    font-size: 12px;
+}
+.icon-caidan {
+    color: red;
+    font-size: 22px;
+}
