@@ -6,34 +6,43 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Document</title>
         <style>
-            div {
-                width: 100px;
-                height: 50px;
-                display: inline-block;
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                height: 3000px;
             }
             #div1 {
+                width: 300px;
+                height: 300px;
                 background: red;
+                float: left;
             }
             #div2 {
-                background: green;
-                position: relative;/* 相对定位 相对于自己原来的位置 定位后空间不释放 */
-                left: 50px;
-                top: 50px;
+                width: 300px;
+                height: 300px;
+                background: yellow;
+                float: left;
             }
             #div3 {
-                background: blue;
+                width: 300px;
+                height: 300px;
+                background: green;
+                float: right;
+            }
+            p::after {
+                content: "";
+                display: block;
+                clear: both;
             }
         </style>
     </head>
     <body>
-        <div id="div1">
-            111
-        </div>
-        <div id="div2">
-            222
-        </div>
-        <div id="div3">
-            333
-        </div>
+        <div id="div1"></div>
+        <div id="div2"></div>
+        <div id="div3"></div>
+        <p>在前面的例子当中，浮动的元素的高度比它们所在的容器元素（是块元素）的高度小。然而如果块元素内的文本太短，不足以把块元素的大小撑到高度大于所有浮动元素的高度，我们可能会看到意想不到的效果。例如，如果上面图片中的文字只有"Lorem ipsum dolor sit amet,"，并且接下来是另外一个和"Floats Example"这个标题一样风格的标题元素，那么第二个标题元素会出现在红色的正方形之间。然而在大多数这种情况下，我们希望这个标题元素是靠左对齐的。为了实现这个效果，我们需要清除浮动。</p>
+        <h1>hahahahahahahah</h1>
     </body>
 </html>
