@@ -23,7 +23,6 @@ ul {
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.30);
     font: 12px/1.5 tahoma,arial,"\5b8b\4f53";
     font-family: "Microsoft YaHei", tahoma, arial, 'Hiragino Sans GB', '\5b8b\4f53', sans-serif;
-
 }
 .wrapper {
     width: 1230px;
@@ -55,27 +54,50 @@ ul {
     line-height: 40px;
     float: left;
 }
-.special {
-    padding: 0 14px 0 10px;
-}
-.header-list a {
+.header-list li>a {
+    display: block;
     padding: 0 10px 0 10px;
     border: solid #f2f2f2;
     border-width: 0 1px;
     color: #999;
     text-decoration: none;
 }
-.header-list a:hover {
+.header-list li>a:hover {
     cursor: pointer;
+}
+.header-list .special>a:hover {
     text-decoration: underline;
     color: red;
     background: white;
+}
+.header-list .normal>a:hover {
+    color: red;
+}
+.header-list .navigation>a:hover {
+    color: #999;
+    background: white;
+}
+.header-list .special {
+    position: relative;
+}
+.arrow {
+    width: 0;
+    height: 0;
+    border: 3px solid transparent;
+    border-top-color: #999;
+    position: absolute;
+    right: 3px;
+    top: 20px;
+}
+.header-list .special:hover .arrow{
+    transform: rotate(180deg);
+    transform-origin: 50% 25%;
 }
 .icon-gouwuche1, .icon-tel {
     color: red;
     font-size: 12px;
 }
-.icon-caidan {
+.icon-caidan1 {
     color: red;
-    font-size: 22px;
+    font-size: 14px;
 }
