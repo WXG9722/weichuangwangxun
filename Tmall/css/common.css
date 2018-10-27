@@ -44,17 +44,18 @@ ul {
 }
 .header-login a:hover {
     cursor: pointer;
-    color: red;
+    color: #ff0036;;
 }
 .header-list {
     color: #999;
     float: right;
 }
-.header-list li {
+.header-list>li {
     line-height: 40px;
     float: left;
+    position: relative;/* 父元素定位 */
 }
-.header-list li>a {
+.header-list>li>a {
     display: block;
     padding: 0 10px 0 10px;
     border: solid #f2f2f2;
@@ -62,42 +63,88 @@ ul {
     color: #999;
     text-decoration: none;
 }
-.header-list li>a:hover {
+.header-list li:hover>a {
     cursor: pointer;
 }
-.header-list .special>a:hover {
-    text-decoration: underline;
-    color: red;
+.header-list .menu-list:hover>a {
+    color: #ff0036;
     background: white;
 }
-.header-list .normal>a:hover {
-    color: red;
+.header-list li a:hover  {
+    color: #ff0036;;
+    text-decoration: underline;
 }
-.header-list .navigation>a:hover {
+.header-list .normal:hover>a {
+    color: #ff0036;
+    text-decoration: none;
+}
+.header-list .navigation:hover>a {
     color: #999;
     background: white;
+    text-decoration: none;
 }
-.header-list .special {
-    position: relative;
-}
-.arrow {
+.header-list .menu-list .arrow {
     width: 0;
     height: 0;
     border: 3px solid transparent;
     border-top-color: #999;
-    position: absolute;
+    position: absolute;/* 绝对定位 相对于已定位祖先元素 */
     right: 3px;
     top: 20px;
+    transition: transform 0.2s ease;/* 动画 */
 }
-.header-list .special:hover .arrow{
+.header-list .menu-list:hover .arrow{
     transform: rotate(180deg);
     transform-origin: 50% 25%;
 }
 .icon-gouwuche1, .icon-tel {
-    color: red;
+    color: #ff0036;;
     font-size: 12px;
 }
 .icon-caidan1 {
-    color: red;
+    color: #ff0036;;
     font-size: 14px;
+}
+.header-list .menu-list .sub-list {
+    position: absolute;/* 绝对定位 相对于已定位祖先元素 */
+    left: 0;
+    top: 40px;/* 不写以上两行代码也可以，因为top默认是auto，但建议写上 */
+    background: white;
+    border: 1px solid #eee;
+    border-top: none;
+    width: 74px;
+    padding: 0 10px 0 10px;
+    line-height: 30px;
+    display: none;
+}
+.header-list .menu-list .sub-list a {
+    color: #696969;
+    text-decoration: none;
+}
+.header-list .menu-list:hover .sub-list {
+    display: block;
+}
+.header-list .menu-list .sub-list li:hover>a {
+    color: #ff0036;
+    text-decoration: underline;
+}
+.QR-code{
+    position: absolute;
+    left: -50px;
+    top: 32px;
+    box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+    display: none;
+}
+.QR-code::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-bottom-color: white;
+    position: absolute;
+    left: 50%;
+    top: -10px;
+}
+.phone:hover .QR-code{
+    display: block;
 }
