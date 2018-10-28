@@ -5,6 +5,14 @@
 ul {
     list-style: none;
 }
+body {
+    font: 12px/1.5 tahoma,arial,"\5b8b\4f53";
+}
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
 /* banner */
 .banner {
     background-color: #ff2f7c;
@@ -23,6 +31,7 @@ ul {
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.30);
     font: 12px/1.5 tahoma,arial,"\5b8b\4f53";
     font-family: "Microsoft YaHei", tahoma, arial, 'Hiragino Sans GB', '\5b8b\4f53', sans-serif;
+    margin-bottom: 5px;
 }
 .wrapper {
     width: 1230px;
@@ -66,7 +75,7 @@ ul {
 .header-list li:hover>a {
     cursor: pointer;
 }
-.header-list .menu-list:hover>a {
+.menu-list:hover>a {
     color: #ff0036;
     background: white;
 }
@@ -74,16 +83,16 @@ ul {
     color: #ff0036;;
     text-decoration: underline;
 }
-.header-list .normal:hover>a {
+.normal:hover>a {
     color: #ff0036;
     text-decoration: none;
 }
-.header-list .navigation:hover>a {
+.navigation:hover>a {
     color: #999;
     background: white;
     text-decoration: none;
 }
-.header-list .menu-list .arrow {
+.arrow {
     width: 0;
     height: 0;
     border: 3px solid transparent;
@@ -93,7 +102,7 @@ ul {
     top: 20px;
     transition: transform 0.2s ease;/* 动画 */
 }
-.header-list .menu-list:hover .arrow{
+.menu-list:hover .arrow{
     transform: rotate(180deg);
     transform-origin: 50% 25%;
 }
@@ -105,7 +114,7 @@ ul {
     color: #ff0036;;
     font-size: 14px;
 }
-.header-list .menu-list .sub-list {
+.sub-list {
     position: absolute;/* 绝对定位 相对于已定位祖先元素 */
     left: 0;
     top: 40px;/* 不写以上两行代码也可以，因为top默认是auto，但建议写上 */
@@ -117,14 +126,14 @@ ul {
     line-height: 30px;
     display: none;
 }
-.header-list .menu-list .sub-list a {
+.sub-list a {
     color: #696969;
     text-decoration: none;
 }
-.header-list .menu-list:hover .sub-list {
+.menu-list:hover .sub-list {
     display: block;
 }
-.header-list .menu-list .sub-list li:hover>a {
+.sub-list li:hover>a {
     color: #ff0036;
     text-decoration: underline;
 }

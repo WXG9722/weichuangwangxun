@@ -1,0 +1,53 @@
+.search {
+    width: 1230px;
+    margin: 0 auto;
+}
+.logo {
+    float: left;
+    margin-left: -37px;
+}
+.search-box {
+    float: left;
+    margin-top: 33px;
+    margin-left: 70px;
+    overflow: hidden;
+}
+.search-text {
+    width: 483px;
+    height: 26px;
+    border: 2px solid #ff0036;
+    padding: 5px 3px 5px 5px;
+    outline: none;
+    float: left;
+}
+.search-button{
+    width: 128px;
+    height: 40px;
+    background: #ff0036;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    border:2px solid #ff0036;
+    float: left;
+    /* 文字之间的空隙 */
+    letter-spacing: 5px;
+    cursor: pointer;
+}
+.search-list {
+    margin-top: 8px;
+    margin-left: -12px;
+}
+.search-list>li {
+    float: left;
+    padding: 0 12px;
+    border-left:1px solid #999 ;
+    line-height: 1.1;
+}
+.search-list>li>a {
+    color: #999;
+    font-size: 14px;
+    text-decoration: none;
+}
+.search-list .red {
+    color: #ff0036;
+}
