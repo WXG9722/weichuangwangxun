@@ -1,10 +1,11 @@
 .search {
     width: 1230px;
     margin: 0 auto;
+    overflow: hidden;
 }
 .logo {
     float: left;
-    margin-left: -37px;
+    margin-left: -45px;
 }
 .search-box {
     float: left;
@@ -49,5 +50,30 @@
     text-decoration: none;
 }
 .search-list .red {
+    color: #ff0036;
+}
+.inner-con {
+    width: 1030px;
+    height: 35px;
+    margin: 0 auto;
+    padding-left:200px;
+}
+.inner-con img {
+    width: 100px;
+    height: 30px;
+    margin-top: 2px;
+    
+}
+.inner-con a {
+    line-height: 35px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    float: left;
+    padding: 0 8px;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+}
+.inner-con a:hover {
+    cursor: pointer;
     color: #ff0036;
 }
