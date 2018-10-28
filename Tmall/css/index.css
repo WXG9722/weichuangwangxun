@@ -79,3 +79,125 @@
     cursor: pointer;
     color: #ff0036;
 }
+.content {
+    height: 1000px;
+    background: url(../image/background.jpg) center -207px no-repeat;
+}
+.slide-content {
+    width: 1230px;
+    height: 500px;
+    margin: 0 auto;
+}
+.category {
+    position: relative;
+}
+.category-title {
+    width: 200px;
+    height: 36px;
+    line-height: 36px;
+    background: #ff0036;
+    position: absolute;
+    top:-35px;
+    left: 0px;
+    font-size: 16px;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+    font-weight: 700;
+    color: #fff;
+}
+.category-title .icon-caidan1 {
+    font-size: 16px;
+    margin-left: 14px;
+    margin-right: 8px;
+    color: #fff;
+    float: left;
+}
+.main-cate-box {
+    width: 200px;
+    height: 500px;
+    background: rgba(0,0,0,0.55);
+    position: absolute;
+}
+.main-cate-box .icon-caidan1 {
+    font-size: 16px;
+    margin-left: 14px;
+    margin-right: 4px;
+    color: #fff;
+}
+.main-cate {
+    height: 31px;
+    line-height: 31px;
+    color: #fff;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+}
+.main-cate>a {
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+    font-size: 14px;
+    color: #fff;
+}
+.main-cate:hover {
+    background: #fff;
+}
+.main-cate:nth-child(1):hover, .main-cate:nth-child(1):hover>a, .main-cate:nth-child(1):hover>i{
+    color:#e54077;
+    font-weight: 700;
+}
+.main-cate:nth-child(2):hover, .main-cate:nth-child(2):hover>a, .main-cate:nth-child(2):hover>i{
+    color:#427def;
+    font-weight: 700;
+}
+.main-cate:nth-child(3):hover, .main-cate:nth-child(3):hover>a, .main-cate:nth-child(3):hover>i{
+    color:#6347ed;
+    font-weight: 700;
+}
+.main-cate:nth-child(4):hover, .main-cate:nth-child(4):hover>a, .main-cate:nth-child(4):hover>i{
+    color:#e54077;
+    font-weight: 700;
+}
+.main-cate:nth-child(5):hover, .main-cate:nth-child(5):hover>a, .main-cate:nth-child(5):hover>i{
+    color:#6347ed;
+    font-weight: 700;
+}
+.main-cate:nth-child(6):hover, .main-cate:nth-child(6):hover>a, .main-cate:nth-child(6):hover>i{
+    color:#427def;
+    font-weight: 700;
+}
+.main-cate:nth-child(7):hover, .main-cate:nth-child(7):hover>a, .main-cate:nth-child(7):hover>i{
+    color:#fa5c5c;
+    font-weight: 700;
+}
+.main-cate:nth-child(8):hover, .main-cate:nth-child(8):hover>a, .main-cate:nth-child(8):hover>i{
+    color:#f7a831;
+    font-weight: 700;
+}
+.main-cate:nth-child(9):hover, .main-cate:nth-child(9):hover>a, .main-cate:nth-child(9):hover>i{
+    color:#f7a831;
+    font-weight: 700;
+}
+.main-cate:nth-child(10):hover, .main-cate:nth-child(10):hover>a, .main-cate:nth-child(10):hover>i{
+    color:#427def;
+    font-weight: 700;
+}
+.main-cate:nth-child(11):hover, .main-cate:nth-child(11):hover>a, .main-cate:nth-child(11):hover>i{
+    color:#dd2727;
+    font-weight: 700;
+}
+.main-cate:nth-child(12):hover, .main-cate:nth-child(12):hover>a, .main-cate:nth-child(12):hover>i{
+    color:#427def;
+    font-weight: 700;
+}
+.main-cate:nth-child(13):hover, .main-cate:nth-child(13):hover>a, .main-cate:nth-child(13):hover>i{
+    color:#f7a831;
+    font-weight: 700;
+}
+.main-cate:nth-child(14):hover, .main-cate:nth-child(14):hover>a, .main-cate:nth-child(14):hover>i{
+    color:#3bc7b0;
+    font-weight: 700;
+}
+.main-cate:nth-child(15):hover, .main-cate:nth-child(15):hover>a, .main-cate:nth-child(15):hover>i{
+    color:#dd2727;
+    font-weight: 700;
+}
+.main-cate:nth-child(16):hover, .main-cate:nth-child(16):hover>a, .main-cate:nth-child(16):hover>i{
+    color:#3bc7b0;
+    font-weight: 700;
+}
