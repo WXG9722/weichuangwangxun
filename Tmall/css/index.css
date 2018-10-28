@@ -7,6 +7,9 @@
     float: left;
     margin-left: -45px;
 }
+.logo img {
+    display: block;
+}
 .search-box {
     float: left;
     margin-top: 33px;
@@ -30,8 +33,7 @@
     font-weight: 700;
     border:2px solid #ff0036;
     float: left;
-    /* 文字之间的空隙 */
-    letter-spacing: 5px;
+    letter-spacing: 5px;/* 文字之间的空隙 */
     cursor: pointer;
 }
 .search-list {
