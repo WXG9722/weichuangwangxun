@@ -58,6 +58,7 @@
     height: 35px;
     margin: 0 auto;
     padding-left:200px;
+    border-bottom: 1.5px solid #ff0036;
 }
 .inner-con img {
     width: 100px;
@@ -199,4 +200,117 @@
 .main-cate:nth-child(16):hover, .main-cate:nth-child(16):hover>a, .main-cate:nth-child(16):hover>i{
     color:#3bc7b0;
     font-weight: 700;
+}
+.cate-sublist {
+    width: 852px;
+    height: 500px;
+    background: #fff;
+    position: absolute;
+    left: 200px;
+    top: 0px;
+    display: none;
+}
+.main-cate:hover .cate-sublist {
+    display: block;
+}
+.hot-word-con {
+    width: 583px;
+    height: 462px;
+    margin: 19px 30px;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+    color: #999;
+    font-size: 12px;
+    float: left;
+}
+.sub-logo-con {
+    float: left;
+    background-color: #FAFAFA;
+    width: 189px;
+    padding: 10px;
+    height: 480px;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+    color: #999;
+    font-size: 12px;
+}
+.hot-word-line {
+    overflow: hidden;
+}
+.line-title {
+    width: 60px;
+    height: 22px;
+    color: #333;
+    margin-right: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 22px;
+    float: left;
+    position: relative;
+}
+.title-text {
+    display: inline-block;
+    width: 60px;
+    overflow: hidden;
+    text-align: justify;
+    text-align-last: justify;
+}
+.line-con {
+    width: 493px;
+    float: left;
+}
+.hot-word {
+    height: 22px;
+    line-height: 22px;
+    font-size: 14px;
+    color: #666;
+    float: left;
+    margin-left: 13px;
+    font-weight: normal;
+}
+.hot-word:hover {
+    color: #e54077;
+}
+.line-con .highlight {
+    color: #e54077;
+}
+.sperate {
+    margin-bottom: 10.5px;
+    border-bottom-width: 1px;
+    border-bottom-style: dashed;
+    border-bottom-color: #eee;
+    border-bottom-color: rgba(0,0,0,.1);
+    height: 10.5px;
+    clear: both;
+}
+.icon-dayuhao {
+    display: block;
+    position: absolute;
+    top: 0px;
+    right: -15px;
+    font-size: 14px;
+}
+.sub-logo {
+    float: left;
+    width: 73px;
+    margin-right: 1px;
+    margin-bottom: 1px;
+    height: 37px;
+    padding: 5px 10px;
+    overflow: hidden;
+    background-color: #fff;
+}
+.sub-logo img {
+    width: 73px;
+    height: 36.5px;
+    margin: 0 auto;
+}
+.sub-logo-botom {
+    float: left;
+    width: 189px;
+    height: 97px;
+    padding-top: 10px;
+}
+.sub-logo-botom img {
+    width: 189px;
+    height: 87px;
+    margin: 0 auto;
 }
