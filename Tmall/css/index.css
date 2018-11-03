@@ -89,7 +89,8 @@
     margin: 0 auto;
 }
 .category {
-    position: relative;
+    position: absolute;
+    z-index: 1;
 }
 .category-title {
     width: 200px;
@@ -266,10 +267,10 @@
     margin-left: 13px;
     font-weight: normal;
 }
-.hot-word:hover {
+#one .hot-word:hover {
     color: #e54077;
 }
-.line-con .highlight {
+#one .highlight {
     color: #e54077;
 }
 .sperate {
@@ -313,4 +314,39 @@
     width: 189px;
     height: 87px;
     margin: 0 auto;
+}
+#two .hot-word:hover {
+    color: #427def;
+}
+#two .highlight {
+    color: #427def;
+}
+.slide-box {
+    position: relative;
+    height: 500px;
+}
+.slide-img-box img{
+    width: 1230px;
+    display: block;
+    height: 500px;
+}
+.slide-box a {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.slide-btn-box {
+    position: absolute;/* 定位 */
+    bottom: 20px;/* 底部20px */
+    left: 50%;/* 左面50%（不是自己width的50%，是他定位时相对的元素的width的50%） */
+    transform: translateX(-50%);/* 如果自己有width，则上面的居中是以该元素左边作为基准 需要x轴左平移50%（此处的50%是自己width的50%） */
+}
+.selected {
+    background: #000;
+    width: 25px;
+    height: 5px;
+    display: inline-block;
+    overflow: hidden;
+    margin-left: 5px;
+    cursor: pointer;
 }
