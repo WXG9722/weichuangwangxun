@@ -439,3 +439,6 @@
     width: 485px;
     height: 316px;
 }
+.brand-body:hover img {
+    opacity: .7;/*透明度*/
+}
