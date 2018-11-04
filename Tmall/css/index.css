@@ -80,8 +80,9 @@
     color: #ff0036;
 }
 .content {
-    height: 1000px;
-    background: url(../image/background.jpg) center -207px no-repeat;
+    height: 2000px;
+    background: url(../image/background.png) center -207px no-repeat;
+    background-color: #f5f5f5;
 }
 .slide-content {
     width: 1230px;
@@ -297,7 +298,7 @@
     height: 37px;
     padding: 5px 10px;
     overflow: hidden;
-    background-color: #fff;
+    background-color: #ffffff;
 }
 .sub-logo img {
     width: 73px;
@@ -398,7 +399,8 @@
     top: 0;
     width: 42px;
     height: 54px;
-    line-height: 54px;
+    line-height: 54px;/*这里的居中是为了让箭头左面的更多两个字居中
+    */
     z-index: 99;
     background-size: 18px 18px;
     background-image: url(../image/point.png);
@@ -441,4 +443,63 @@
 }
 .brand-body:hover img {
     opacity: .7;/*透明度*/
+}
+.brand-list {
+    height: 327px;
+    background-color: #f5f5f5;
+    margin-top: 40px;
+}
+.brand-list-item {
+    height: 327px;
+    margin-top: 40px;
+}
+.brand-list-img {
+    width: 122px;
+    height: 108px;
+    margin-right: 1px;
+    margin-bottom: 1px;
+    float: left;
+    background-color: #ffffff;
+    position: relative;
+}
+.brand-list-img img {
+    position: absolute;
+    top: 29px;
+    left: 11px;
+}
+.img-mask {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,.8);
+    transition: opacity .3s ease-out;
+    opacity: 0;
+}
+.coupon {
+    color: #fff;
+    text-align: center;/*这是为了他的子元素span水平居中 即inlin-bolck的元素设置在父元素里居中 可以在父元素加入此css*/
+    line-height: 90px;
+    height: 60px;
+    font-size: 12px;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+}
+.enter {
+    color: #fff;
+    text-align: center;/*这是为了他的子元素span水平居中 即inlin-bolck的元素设置在父元素里居中 可以在父元素加入此css*/
+    height: 32px;
+    font-size: 12px;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+}
+.enter span {
+    display: inline-block;
+    width: 63px;
+    height: 18px;
+    line-height: 15px;
+    background-color: #FF0036;
+    border-radius: 9px;/*CSS3 矩形周围会呈现圆形即最终会成为椭圆形*/
+}
+.brand-list-img:hover .img-mask {
+    opacity: 1;
 }
