@@ -304,13 +304,13 @@
     height: 36.5px;
     margin: 0 auto;
 }
-.sub-logo-botom {
+.sub-logo-bottom {
     float: left;
     width: 189px;
     height: 97px;
     padding-top: 10px;
 }
-.sub-logo-botom img {
+.sub-logo-bottom img {
     width: 189px;
     height: 87px;
     margin: 0 auto;
@@ -349,4 +349,93 @@
     overflow: hidden;
     margin-left: 5px;
     cursor: pointer;
+}
+.brand-sale {
+    height: 370px;
+    margin-top: 40px;
+}
+/* brand-item1 */
+.brandWall-item1 {
+    float: left;/*div左浮*/
+    display: block;
+    width: 234px;
+    height: 370px;
+    margin-right: 13px;
+    background-color: #fff
+}
+.brand-head {
+    height: 54px;
+    background: #fff;
+    font-size: 0;
+    border-style: solid;
+    border-width: 0 0 1px;
+    border-color: #eee;
+    position: relative;
+}
+.brand-title {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    line-height: 54px;
+    height: 18px;
+    margin-left: 10px;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+}
+.brand-title-en {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    color: #333;
+    margin-left: 10px;
+    line-height: 24px;
+    height: 44px;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+}
+.brand-more {
+    position: absolute;
+    right: 14px;
+    top: 0;
+    width: 42px;
+    height: 54px;
+    line-height: 54px;
+    z-index: 99;
+    background-size: 18px 18px;
+    background-image: url(../image/point.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+    padding-right: 14px;
+    font-size: 16px;
+    color: #666;
+    overflow: hidden;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+}
+.brand-img1 {
+    width: 234px;
+    height: 316px;
+}
+/* brand-item2 */
+.brandWall-item2 {
+    float: left;
+    display: block;
+    width: 485px;
+    height: 370px;
+    margin-right: 13px;
+    background-color: #fff;
+}
+.brand-img2 {
+    width: 485px;
+    height: 316px;
+}
+/* brand-item3 */
+.brandWall-item3 {
+    float: left;
+    display: block;
+    width: 485px;
+    height: 370px;
+    background-color: #fff;
+}
+.brand-img3 {
+    width: 485px;
+    height: 316px;
 }
