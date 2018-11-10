@@ -479,7 +479,7 @@
 }
 .coupon {
     color: #fff;
-    text-align: center;/*这是为了他的子元素span水平居中 即inlin-bolck的元素设置在父元素里居中 可以在父元素加入此css*/
+    text-align: center;/*这是为了他的子元素span水平居中 即inline-bolck的元素设置在父元素里居中 可以在父元素加入此css*/
     line-height: 90px;
     height: 60px;
     font-size: 12px;
@@ -502,4 +502,177 @@
 }
 .brand-list-img:hover .img-mask {
     opacity: 1;
+}
+.new-floor-con {
+    height: 665px;
+    margin-top: 20px;
+}
+.floor-line-con {
+    height: 31px;
+}
+.floor-img {
+    width: 214px;
+    height: 31px;
+    float: left;
+}
+.floor-img img {
+    width: 214px;
+    height: 25px;
+    float: left;
+}
+.floor-title-list {
+    height: 31px;
+    float: right;
+}
+.floor-title-word {
+    display: inline-block;
+    height: 20px;
+    margin: 5px 10px;
+    line-height: 20px;
+    font-size: 14px;
+    color: #000;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+}
+.floor-title-word:hover {
+    cursor: pointer;
+    border-bottom: 1px solid #000;
+}
+.floor-body {
+    height: 618px;
+    margin-top: 10px;
+    clear: both;
+}
+.body-bigbanner {
+    float: left;
+    width: 235px;
+    height: 618px;
+    position: relative;
+}
+.body-bigbanner img {
+    width: 235px;
+    height: 618px;
+}
+.banner-detail {
+    width: 218px;
+    height: 64px;
+    float: left;
+    position: absolute;
+    top: 430px;
+    left: 0px;
+}
+.left-title-wrap {
+    width: 70px;
+    height: 64px;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;/*此元素会作为一个表格单元格显示（类似 <td> 和 <th>）*/
+    background: rgba(0,0,0,.9);
+    
+}
+.left-title-wrap span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 24px;
+    width: 36px;
+    overflow: hidden;
+    color: #FFF;
+    font-size: 18px;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+}
+.right-title-wrap {
+    width: 128px;
+    height: 64px;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;/*此元素会作为一个表格单元格显示（类似 <td> 和 <th>）*/
+    background: rgba(0,0,0,.6);
+}
+.right-title-wrap span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 24px;
+    width: 114px;
+    overflow: hidden;
+    color: #FFF;
+    font-size: 18px;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+}
+.detail-wrap {
+    width: 235px;
+    height: 60px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    background-image: linear-gradient(-180deg,rgba(0,0,0,0) 4%,rgba(0,0,0,.36) 100%);
+}
+.detail-wrap img {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width: 32px;
+    height: 32px;
+}
+.body-bigbanner:hover img {
+    opacity: .7;
+}
+.floor-tabs {
+    width: 484px;
+    height: 301px;
+    margin: 0 0 15px 13px;
+    background: #ffffff;
+    float: left;
+}
+.floor-item {
+    display: block;
+    width: 235px;
+    height: 301px;
+    margin: 0 0 15px 13px;
+    float: left;
+    position: relative;
+}
+.grid {
+    width: 234px;
+    height: 300px;
+    border: 1px solid #fff;
+    background: #ffffff;
+}
+.grid-img {
+    width: 185px;
+    height: 185px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.grid-img img {
+    width: 185px;
+    height: 185px;
+}
+.grid-detail {
+    width: 135px;
+    height: 40px;
+    line-height: 20px;
+    margin: 8px auto;
+    font-size: 14px;
+    color: #333;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+    overflow: hidden;
+    text-align: center;
+}
+.grid-price {
+    width: 234px;
+    height: 18px;
+    text-align: center;
+    font-size: 18px;
+    color: #FF0036;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+}
+.floor-item:hover {
+    cursor: pointer;
+}
+.floor-item:hover img{
+    opacity: .7;
+}
+.grid:hover {
+    border: 1px solid #ff0036;
 }
