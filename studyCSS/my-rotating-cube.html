@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>my-rotating-cube</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            perspective: 800px;
+        }
+        #parrent {
+            width: 200px;
+            height: 200px;
+            margin: 200px auto;
+            position: relative;
+            transform-style: preserve-3d;
+			animation: willRote 3s linear infinite;
+        }
+        @keyframes willRote {
+			100% {
+				transform: rotateY(-360deg);
+			}
+		}
+        #parrent div {
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+            font-size: 50px;
+            position: absolute;
+        }
+        #div1 {
+            background-color: rgba(0,0,255,0.7);
+            transform: translateZ(100px);
+        }
+        #div2 {
+            background-color: rgba(255,69,0,0.7);
+            transform: rotateX(90deg) translateZ(-100px);
+        }
+        #div3 {
+            background-color:rgba(11,23,70,0,7);
+            transform: rotateY(90deg) translateZ(-100px);
+        }
+        #div4 {
+            background-color:rgba(255,255,0,0.7);
+            transform: rotateY(90deg) translateZ(100px);
+        }
+        #div5 {
+            background-color: rgba(255,192,203,0.7);
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        #div6 {
+            background-color:rgba(218,112,214,0.7);
+            transform: rotateY(180deg) translateZ(100px);
+        }
+    </style>   
+</head>
+<body>
+    <div id="parrent">
+        <div id="div1">1</div>
+        <div id="div2">2</div>
+        <div id="div3">3</div>
+        <div id="div4">4</div>
+        <div id="div5">5</div>
+        <div id="div6">6</div>
+    </div>
+</body>
+</html>
