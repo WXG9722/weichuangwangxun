@@ -676,3 +676,10 @@
 .grid:hover {
     border: 1px solid #ff0036;
 }
+.content-end{
+    background: url(../image/end.png) no-repeat;
+    width: 80px;
+    height: 45px;
+    margin: 0 auto 10px;
+    z-index: 9;
+}

@@ -8,15 +8,27 @@
 </head>
 <body>
     <script>
-        var now = new Date();
-        var s = now.getFullYear()+"年"+
-                (now.getMonth()+1)+"月"+
-                now.getDate()+"日"+
-                now.getHours()+"点"+
-                now.getMinutes()+"分"+
-                now.getSeconds()+"秒"+
-                "星期"+now.getDay();
-        console.log("现在是"+s+"，欢迎您的到访");
+        function Fibonacci(n){
+            if(n==1||n==2){
+                return 1;
+            }else{
+                return parseInt(Fibonacci(n-1) + Fibonacci(n-2));
+            }
+        }
+        function ReverseFibonacci(n){
+            var a = [];
+            for(var i=1;i<=n;i++){
+                a.push(Fibonacci(i));
+            }
+            var b = a.reverse();
+            for(var i=0;i<b.length;i++){
+                document.write(b[i]+"&nbsp");
+                if(i%6==5&&i!=0){
+                    document.write("<br>");
+                }
+            }
+        }
+        ReverseFibonacci(40);
     </script>
 </body>
 </html>
