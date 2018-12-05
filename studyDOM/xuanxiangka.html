@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #container{
+            width: 315px;
+            height: 340px;
+            margin: 200px auto;
+        }
+        ul{
+            list-style: none;
+            overflow: hidden;
+        }
+        li{
+            float: left;
+            width: 100px;
+            height: 30px;
+            background: #ff0036;
+            margin-right: 5px;
+        }
+        li.selected{
+            background: green;
+        }
+        #content div{
+            width: 310px;
+            height: 310px;
+            background: blue;
+            display: none;
+        }
+        #content div.active{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="btn-box">
+            <ul>
+                <li>111111</li>
+                <li>222222</li>
+                <li>333333</li>
+            </ul>
+        </div>
+        <div id="content">
+            <div class="active">aaaaaa</div>
+            <div>bbbbbb</div>
+            <div>cccccc</div>
+        </div>
+    </div>
+    <script>
+        var aLi = document.getElementsByTagName('li');
+        var oContent = document.getElementById('content');
+        var aDiv = oContent.getElementsByTagName('div');
+
+        for(var i=0; i<aLi.length; i++){
+            // 这行代码是为了给每一个li设置一个索引 
+            // 名字任意可以不是index
+            // 这个索引的值也正好对应了li在aLi数组里的索引 也对应了div在aDiv数组里的索引
+            aLi[i].index = i;
+            aLi[i].onmouseover = function(){
+                // 点击时 触发click事件 下面的for循环会把所有的li的类名赋为空
+                for(var j=0; j<aLi.length; j++){
+                    aLi[j].className = "";
+                    aDiv[j].className = "";
+                }
+                // 用this是因为第一个for循环只是给所有的li绑定一个click事件 
+                // 在我们点击之前 这个用来绑定click事件的循环就已经执行完了 i就一直是3
+                // this指代的是被点击的li 即点击的是第n个li就是aLi[n]
+                // 这样当我们点击li时 触发click事件 把selected这个类名赋给对应的被点击的li
+                this.className = "selected";
+                // this的含义不变 他的index值是第67行代码赋的值 
+                // 这个值与div在aDiv数组的索引值是一一对应的
+                // 因为索引值是一一对应的 所以触发click事件时 把active这个类名赋给对应的被点击的div
+                aDiv[this.index].className = "active";
+            }
+        }
+    </script>
+</body>
+</html>

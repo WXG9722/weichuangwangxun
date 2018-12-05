@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">mmmmmmmm</div>
+    <ul>
+        <li class="b">1</li>
+        <li class="a">2</li>
+        <li class="b">3</li>
+        <li class="a">4</li>
+    </ul>
+    <script>
+        // 通过id获取元素
+        var oDiv = document.getElementById('div1');
+        oDiv.style.color = "yellow";
+        // 通过标签名获取 返回的是一个数组 数组中存放的DOM对象
+        var aLi = document.getElementsByTagName('li');
+        aLi[1].style.color = "red";
+        for(var i=0; i<aLi.length; i++){
+            aLi[i].style.color = "blue";
+        }
+        // 通过类名获取 返回的是一个数组 数组中存放的DOM对象
+        var aLia = document.getElementsByClassName('a');
+        for(var i=0; i<aLia.length; i++){
+            aLia[i].style.background = "green";
+        }
+        // IE6以下浏览器不支持getElementsByClassName 需要自己封装一个函数
+        function getElementsByClassName(clsName){
+            var result = [];
+            var allElements = document.getElementsByTagName('*');
+            for(var i=0; i<allElements.length; i++){
+                var arr = allElements[i].className.split(" ");// 这是为了识别class="a b"的情况 用split方法将选中的className按空格分开 返回一个数组
+                for(var j=0; j<arr.length; j++){
+                    if(arr[j] == clsName){
+                        result.push(allElements[i]);
+                    }
+                }
+            }
+            return result;
+        }
+        getElementsByClassName('b')[0].style.background = "pink";
+    </script>
+</body>
+</html>
