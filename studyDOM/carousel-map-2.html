@@ -31,7 +31,7 @@
             width: 7856px;
             height: 500px;
             overflow: hidden;
-            transition: transform 0.3s ease-out;
+            transition: transform 0.8s ease-out;
         }
         #img-box img{
             width: 982px;
@@ -121,7 +121,6 @@
 
         var iNow = 0;
         var timer;
-
         // 所需要的函数
         function change(idx){
             for(var i=0; i<btnLi.length; i++){
@@ -143,7 +142,7 @@
         function run(){
             timer = setInterval(function(){
                 next.onclick();
-            },3000);
+            },4000);
         }
         // 执行
         for(var i=0; i<btnLi.length; i++){
