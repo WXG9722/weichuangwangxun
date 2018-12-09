@@ -128,9 +128,7 @@
                 // aImg[i].className = "";
             }
             btnLi[idx].className = "selected";
-            var m = -982 * idx + "px";
-            var n = "translateX(" + m + ")";
-            img.style.transform = n;
+            img.style.transform = "translateX(" + (-982 * idx) + "px" + ")";
         }
         function getIndex(){
             for(var i=0; i<btnLi.length; i++){
