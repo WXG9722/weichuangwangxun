@@ -1,3 +1,4 @@
+// 选项卡
 var oHeadDiv = document.getElementById('floor-tab-head');
 var aLi = oHeadDiv.getElementsByTagName('li');
 var oBodyDiv = document.getElementById('floor-tab-body');
@@ -14,4 +15,3 @@ for(var i=0; i<aLi.length; i++){
         aUl[this.index].className = "active";
     }
 }
-console.log(aUl)

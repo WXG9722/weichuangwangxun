@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 200px;
+            border: 2px solid #000;
+            border-radius: 10px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+        ul{
+            padding: 0;
+            margin: 0;
+            height: 200px;
+        }
+        li{
+            list-style: none;
+            text-align: center;
+            line-height: 50px;
+        }
+        li:hover{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="menu">
+        <ul>
+            <li>111</li>
+            <li>222</li>
+            <li>333</li>
+            <li>444</li>
+        </ul>
+    </div>
+    <script>
+        var oDiv = document.getElementById('menu');
+        var aLi = document.getElementsByTagName('li');
+        document.oncontextmenu = function(e){
+            var x = e.clientX + "px";
+            var y = e.clientY + "px";
+            oDiv.style.top = y;
+            oDiv.style.left = x;
+            oDiv.style.display = "block";
+            return false;
+        }
+        document.onclick = function(){
+            oDiv.style.display = "none";
+        }
+        for(var i=0; i<aLi.length; i++){
+            aLi[i].onclick = function(){
+                console.log(this.innerHTML);
+                oDiv.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
