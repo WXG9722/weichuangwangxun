@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #content{
+            width: 400px;
+            height: 200px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            overflow: hidden;
+            position: relative;
+        }
+        ul{
+            width: 520px;
+            list-style: none;
+            position: absolute;
+            left: 0;
+        }
+        li{
+            width: 120px;
+            height: 120px;
+            background: pink;
+            float: left;
+            text-align: center;
+            line-height: 120px;
+            margin-right: 10px;
+            color: white;
+            font-size: 40px;
+        }
+        #btn-box{
+            margin: 145px 95px;
+        }
+        #btn-box span{
+            width: 100px;
+            height: 50px;
+            background: palevioletred;
+            display: inline-block;
+            text-align: center;
+            line-height: 50px;
+        }
+        #btn-box span:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <ul id="num-box">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <div id="btn-box">
+            <span id="left">向左</span>
+            <span id="right">向右</span>
+        </div>
+    </div>
+    <script>
+        var oNumBox = document.getElementById('num-box');
+        var oLeft = document.getElementById('left');
+        var oRight = document.getElementById('right');
+        var speed;
+
+        oNumBox.innerHTML += oNumBox.innerHTML;
+        oNumBox.style.width = oNumBox.offsetWidth * 2 + "px";
+        
+        speed = -3;
+        setInterval(function(){
+            oNumBox.style.left = oNumBox.offsetLeft + speed + "px";
+            if(oNumBox.offsetLeft <= -oNumBox.offsetWidth/2){
+                oNumBox.style.left = 0;
+            }
+            if(oNumBox.offsetLeft > 0){
+                oNumBox.style.left = -oNumBox.offsetWidth/2 + "px";
+            }
+        },20)
+        
+        oLeft.onclick = function(){
+            speed = -3;
+        }
+        oRight.onclick = function(){
+            speed = 3;
+        }
+    </script>
+</body>
+</html>

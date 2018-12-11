@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div0{
+            width: 200px;
+            height: 500px;
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <div id="div0"></div>
+    <script>
+        var oDiv = document.getElementById('div0');
+        oDiv.onclick = function(){
+            var timer = setInterval(function(){
+                if(oDiv.offsetWidth < 800){
+                    oDiv.style.width = oDiv.offsetWidth + 10 + "px";
+                }else if(oDiv.offsetWidth >= 800){
+                    clearInterval(timer);
+                }
+            },20);
+        }
+    </script>
+</body>
+</html>

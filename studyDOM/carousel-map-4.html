@@ -32,6 +32,9 @@
             height: 500px;
             overflow: hidden;
             transition: transform 0.8s ease-out;
+            transition: left 0.8s ease-out;
+            position: absolute;
+            left: 0;
         }
         #img-box img{
             width: 982px;
@@ -119,6 +122,8 @@
         var next = document.getElementById('next');
         var last = document.getElementById('last');
 
+        
+
         var iNow = 0;
         var timer;
         // 所需要的函数
@@ -128,7 +133,7 @@
                 // aImg[i].className = "";
             }
             btnLi[idx].className = "selected";
-            img.style.transform = "translateX(" + (-982 * idx) + "px" + ")";
+            img.style.left = -982 * idx + "px";
         }
         function getIndex(){
             for(var i=0; i<btnLi.length; i++){
@@ -147,19 +152,17 @@
             btnLi[i].index = i; // 为每一个元素添加一个索引值
             btnLi[i].onmouseover = function(){
                 change(this.index);
-                // iNow = this.index; // 这一行代码可以替代getIndex函数
+                iNow = this.index; // 这一行代码可以替代getIndex函数
             }
         }
         next.onclick = function(){
-            getIndex();
             iNow++;
-            if(iNow >= aImg.length){
+            if(iNow >= aImg.length-1){
                 iNow = 0;
             }
-            change(iNow);
+            change(iNow); 
         }
         last.onclick = function(){
-            getIndex();
             iNow--;
             if(iNow < 0){
                 iNow = btnLi.length - 1;

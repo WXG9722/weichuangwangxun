@@ -322,27 +322,29 @@
 #two .highlight {
     color: #427def;
 }
-.slide-box {
+#slide-box {
     position: relative;
     height: 500px;
 }
-.slide-img-box img{
+#slide-img-box img{
     width: 1230px;
     display: block;
     height: 500px;
 }
-.slide-box a {
+#slide-box a {
     position: absolute;
     left: 0px;
     top: 0px;
+    transition: opacity .3s ease-out;
+    opacity: 0;
 }
-.slide-btn-box {
+#slide-btn-box {
     position: absolute;/* 定位 */
     bottom: 20px;/* 底部20px */
     left: 50%;/* 左面50%（不是自己width的50%，是他定位时相对的元素的width的50%） */
     transform: translateX(-50%);/* 如果自己有width，则上面的居中是以该元素左边作为基准 需要x轴左平移50%（此处的50%是自己width的50%） */
 }
-.selected {
+#slide-btn-box li {
     background: #000;
     width: 25px;
     height: 5px;
@@ -350,6 +352,14 @@
     overflow: hidden;
     margin-left: 5px;
     cursor: pointer;
+    opacity: .3;
+}
+#slide-box a.slide-active{
+    opacity: 1;
+}
+#slide-box li.slide-selected{
+    background: #fff;
+    opacity: .6;
 }
 .brand-sale {
     height: 370px;
@@ -683,7 +693,7 @@
     margin: 0 auto 10px;
     z-index: 9;
 }
-.floor-tab-item{
+#floor-tab-item{
     width: 462px;
     height: 282px;
     margin: 10px;
