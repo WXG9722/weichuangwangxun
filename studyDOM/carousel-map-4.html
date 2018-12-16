@@ -28,11 +28,9 @@
             overflow: hidden;
         }
         #img-box{
-            width: 7856px;
+            width: 8838px;
             height: 500px;
-            overflow: hidden;
-            transition: transform 0.8s ease-out;
-            transition: left 0.8s ease-out;
+            overflow: hidden;      
             position: absolute;
             left: 0;
         }
@@ -90,6 +88,7 @@
            <img src="../Tmall/image/carousel6.jpg" alt="">
            <img src="../Tmall/image/carousel7.jpg" alt="">
            <img src="../Tmall/image/carousel8.jpg" alt="">
+           <img src="../Tmall/image/carousel1.jpg" alt="">
         </div>
         <div id="btn-box">
             <ul>
@@ -110,6 +109,7 @@
             </ul>
         </div>
     </div>
+    <script src="./jslib.js"></script>
     <script>
         var oContainer = document.getElementById('container');
 
@@ -132,8 +132,10 @@
                 btnLi[i].className = "";
                 // aImg[i].className = "";
             }
-            btnLi[idx].className = "selected";
-            img.style.left = -982 * idx + "px";
+            btnLi[idx == btnLi.length?0:idx].className = "selected";
+            animate(img, {
+                left: -982 * idx
+            });
         }
         function getIndex(){
             for(var i=0; i<btnLi.length; i++){
@@ -157,15 +159,17 @@
         }
         next.onclick = function(){
             iNow++;
-            if(iNow >= aImg.length-1){
-                iNow = 0;
+            if(iNow == aImg.length){
+                img.style.left = 0;
+                iNow = 1;
             }
             change(iNow); 
         }
         last.onclick = function(){
             iNow--;
-            if(iNow < 0){
-                iNow = btnLi.length - 1;
+            if(iNow == -1){
+                img.style.left = -aImg[0].offsetWidth * (aImg.length - 1) + "px";
+                iNow = aImg.length - 2;
             }
             change(iNow);
         }
