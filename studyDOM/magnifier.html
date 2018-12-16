@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #small-box{
+            position: relative;
+            float: left;
+        }
+        span{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.5);
+            display: none;
+        }
+        #big-box{
+            float: left;
+            width: 400px;
+            height: 400px;
+            overflow: hidden;
+            display: none;
+            position: relative;
+        }
+        #big-box img{
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="small-box">
+        <img src="./1.jpg" alt="">
+        <span></span>
+    </div>
+    <div id="big-box">
+        <img id="a" src="./2.jpg" alt="">
+    </div>
+    <script>
+        var oSmallBox = document.getElementById('small-box');
+        var oBigBox = document.getElementById('big-box');
+        var oSpan = document.getElementsByTagName('span')[0];
+        var bigImg = document.getElementById('a');
+        
+
+        oSmallBox.onmouseover = function(){
+            oSpan.style.display = 'block';
+            oBigBox.style.display = 'block';
+        }
+        oSmallBox.onmouseout = function(){
+            oSpan.style.display = 'none';
+            oBigBox.style.display = 'none';
+        }
+        oSmallBox.onmousemove = function(e){
+            // 记录小图能走的最大距离 大图能走的最大距离 分为宽和高 共4个值
+            var smallMaxWidth = oSmallBox.offsetWidth - oSpan.offsetWidth;
+            var bigMaxWidth = bigImg.offsetWidth - oBigBox.offsetWidth;
+            var smallMaxHeight = oSmallBox.offsetHeight - oSpan.offsetHeight;
+            var bigMaxHeight = bigImg.offsetHeight - oBigBox.offsetHeight;
+            // 记录小图实际走的距离 比上 小图能走的最大距离 的比值 分为宽和高 共2个值
+            var wPercent = oSpan.offsetLeft/smallMaxWidth;
+            var hPercent = oSpan.offsetTop/smallMaxHeight;
+            // 小图实际走的距离 应为 当前鼠标的距离 减 小图宽度的一半
+            oSpan.style.left = e.clientX - oSpan.offsetWidth/2 + 'px';
+            oSpan.style.top = e.clientY - oSpan.offsetHeight/2 + 'px';
+            if(oSpan.offsetLeft <= 0){
+                oSpan.style.left = 0;
+            }
+            if(oSpan.offsetLeft >= smallMaxWidth){
+                oSpan.style.left = smallMaxWidth + 'px';
+            }
+            if(oSpan.offsetTop <= 0){
+                oSpan.style.top = 0;
+            }
+            if(oSpan.offsetTop >= smallMaxHeight){
+                oSpan.style.top = smallMaxHeight + 'px';
+            }
+            // 大图实际走的距离 应为 大图能走的最大距离 乘 比值
+            bigImg.style.left = - bigMaxWidth * wPercent + 'px';
+            bigImg.style.top = - bigMaxHeight * hPercent + 'px';
+        }
+    </script>
+</body>
+</html>
