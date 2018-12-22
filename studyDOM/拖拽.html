@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #a{
+            height: 300px;
+            width: 300px;
+            background: red;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="a"></div>
+    <script>
+        var oDiv = document.getElementById('a');
+        oDiv.onmousedown = function(e){
+            // 求出鼠标离div的距离 当点击的时候 这个值就固定了
+            var disX = e.clientX - oDiv.offsetLeft;
+            var disY = e.clientY - oDiv.offsetTop;
+            document.onmousemove = function(e){
+                oDiv.style.left = e.clientX - disX + 'px';
+                oDiv.style.top = e.clientY - disY + 'px';
+                // if(oDiv.offsetLeft <= 0){
+                //     oDiv.style.left = 0;
+                // }
+                // if(oDiv.offsetTop <= 0){
+                //     oDiv.style.top = 0;
+                // }
+                // if(oDiv.offsetLeft >= window.innerWidth - oDiv.offsetWidth){
+                //     oDiv.style.left = window.innerWidth - oDiv.offsetWidth + 'px';
+                // }
+                // if(oDiv.offsetTop >= window.innerHeight - oDiv.offsetHeight){
+                //     oDiv.style.top = window.innerHeight - oDiv.offsetHeight + 'px';
+                // }
+            }
+            document.onmouseup = function(){
+                document.onmousemove = null;
+            }
+        }
+    </script>
+</body>
+</html>

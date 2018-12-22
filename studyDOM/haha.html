@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Draggable objects</title>
+<script type="text/javascript">
+
+var bMouseUp = true, oDragging, nMouseX, nMouseY, nStartX, nStartY, nZFocus = 100 /* the highest z-Index present in your page plus 1 */;
+
+function dragDown(oPssEvt1) {
+  var bExit = true, oMsEvent1 = oPssEvt1 || /* IE */ window.event;
+  for (var iNode = oMsEvent1.target; iNode; iNode = iNode.parentNode) {
+    if (iNode.className === "draggable") { bExit = false; oDragging = iNode; break; }
+  }
+  if (bExit) { return; }
+  bMouseUp = false;
+  nStartX = nStartY = 0;
+  for (var iOffPar = oDragging; iOffPar; iOffPar = iOffPar.offsetParent) {
+    nStartX += iOffPar.offsetLeft;
+    nStartY += iOffPar.offsetTop;
+  }
+  nMouseX = oMsEvent1.clientX;
+  nMouseY = oMsEvent1.clientY;
+  oDragging.style.zIndex = nZFocus++;
+  return false;
+}
+
+function dragMove(oPssEvt2) {
+  if (bMouseUp) { return; }
+  var oMsEvent2 = oPssEvt2 || /* IE */ window.event;
+  oDragging.style.left = String(nStartX + oMsEvent2.clientX - nMouseX) + "px";
+  oDragging.style.top = String(nStartY + oMsEvent2.clientY - nMouseY) + "px";
+}
+
+function dragUp() { bMouseUp = true; }
+
+document.onmousedown = dragDown;
+document.onmousemove = dragMove;
+document.onmouseup = dragUp;
+
+</script>
+<style type="text/css">
+.draggable {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: auto;
+  height: auto;
+  cursor: move;
+}
+
+#myDiv {
+  width: 300px;
+  height: 200px;
+  left: 200px;
+  top: 200px;
+  background-color: #00ff00;
+}
+</style>
+</head>
+
+<body>
+
+<div class="draggable" id="myDiv"><p>一个 Hello world!</p></div>
+<div class="draggable" style="background-color:#aaaaaa;">又一个 hello world!</div>
+
+</body>
+</html>
