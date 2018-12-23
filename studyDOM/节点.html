@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div id="a"></div>
+        <div id="b"></div>
+    </div>
+    <script>
+        var oDiv1 = document.getElementById('a');
+        var oDiv2 = document.getElementById('b');
+
+        function next(elem){
+            do{
+                elem = elem.nextSibling;
+            }while(elem && elem.nodeType != 1)
+            return elem;
+        }
+        console.log(next(oDiv2));
+
+        function prev(elem){
+            do{
+                elem = elem.previousSibling;
+            }while(elem && elem.nodeType != 1)
+            return elem;
+        }
+        console.log(prev(oDiv1));
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        #content{
+            width: 180px;
+            border:1px solid #000;
+        }
+        h2{
+            background: #000000;
+            color: #fff;
+        }
+        #content ul{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <ul id="content">
+        <li>
+            <h2>管理区</h2>
+            <ul>
+                <li>001</li>
+                <li>002</li>
+                <li>003</li>
+            </ul>
+        </li>
+        <li>
+            <h2>交流区</h2>
+            <ul>
+                <li>001</li>
+                <li>002</li>
+                <li>003</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <script>
+        function next(elem){
+            do{
+                elem = elem.nextSibling;
+            }while(elem && elem.nodeType != 1)
+            return elem;
+        }
+
+        var aH2 = document.getElementsByTagName('h2');
+
+        for(var i=0; i<aH2.length; i++){
+            aH2[i].onclick = function(){
+                var oUl = next(this);
+                if(oUl.style.display == "none" || oUl.style.display == ""){
+                    oUl.style.display = "block";
+                }else{
+                    oUl.style.display = "none";
+                }
+            }
+            aH2[i].onselectstart = function(){0
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

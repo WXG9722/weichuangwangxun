@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 深复制
+        var a = {
+            name: 'wang',
+            age: 18,
+            father: {
+                name: 'laowang',
+                age: 50
+            }
+        }
+
+        function clone(obj){
+            var result = {};
+            for(key in obj){
+                if(obj[key] == "Object"){
+                    result[key] = clone(obj[key]);
+                }else{
+                    result[key] = obj[key];
+                }
+            }
+            return result;
+        }
+        
+    </script>
+</body>
+</html>

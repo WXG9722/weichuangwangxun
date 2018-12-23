@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul{
+            background: green;
+        }
+        li{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">add</button>
+    <ul id="a">
+        <li>1111</li>
+        <li>2222</li>
+    </ul>
+    <script>
+        // 事件三要素 事件源 事件 事件处理函数
+        var oBtn = document.getElementById('btn');
+        var oUl = document.getElementById('a');
+        oBtn.onclick = function(){
+            var oLi = document.createElement('li');
+            oLi.innerHTML = Math.random();
+            oUl.appendChild(oLi);
+        }
+        // 事件委托 把事件绑定到父元素上 利用冒泡 点击子元素 触发父元素的点击事件 获取事件源 判断事件源为LI时 执行相应操作
+        oUl.onclick = function(e){
+            var target = e.target;
+            if(target.tagName == "LI"){
+                console.log(target.innerHTML);
+            }
+        }
+    </script>
+</body>
+</html>

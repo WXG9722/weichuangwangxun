@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var Car = function(name, year){
+            this.name = name;
+            this.year = year;
+        }
+        Car.prototype.move = function(){
+            this.year++;
+        }
+        var benz = new Car('smart', 2010);
+        benz.move();
+
+        console.log(benz);
+        console.log(benz.__proto__);
+        console.log(benz.constructor);
+        console.log(Car.prototype);
+        console.log(Car.prototype.constructor);
+    </script>
+</body>
+</html>
