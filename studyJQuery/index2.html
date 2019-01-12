@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-1.12.4.js"></script>
+    <style>
+        .active{
+            background-color: pink;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" value="请输入名称" id="a">
+    <script>
+        $('#a').on('focus', function(){
+            // defaultValue是value的默认值
+            if(this.value == this.defaultValue){
+                this.value = '';
+            }
+            $(this).addClass('active');
+        })
+        $('#a').on('blur', function(){
+            if(this.value == ''){
+                this.value = this.defaultValue;
+            }
+            $(this).removeClass('active');
+        })
+    </script>
+</body>
+</html>
