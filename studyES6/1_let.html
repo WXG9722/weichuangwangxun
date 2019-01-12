@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <script>
+        var aLi = document.querySelectorAll("li");
+        // // 1.存索引
+        // for(var i=0; i<aLi.length; i++){
+        //     aLi[i].index = i;
+        //     aLi[i].onclick = function(){
+        //         console.log(this.index);
+        //     }
+        // }
+        // // 2. this指向
+        // for(var i=0; i<aLi.length; i++){
+        //     aLi[i].index = i;
+        //     aLi[i].onclick = function(){
+        //         var _this = this;
+        //         setTimeout(function(){
+        //             console.log(_this.index);
+        //         }, 1000)
+        //     }
+        // }
+        // for(var i=0; i<aLi.length; i++){
+        //     aLi[i].index = i;
+        //     aLi[i].onclick = function(){
+        //         setTimeout(function(){
+        //             console.log(this.index);
+        //         }.bind(this), 1000)
+        //     }
+        // }
+        // // 3. 闭包
+        // for(var i=0; i<aLi.length; i++){
+        //     (function(idx){
+        //         aLi[i].onclick = function(){
+        //             console.log(idx);
+        //         }
+        //     })(i);
+        // }
+        // // 4. let（是因为let有块级作用域的特性 内部函数使用i 在外部函数定义的变量i不会被释放）
+        // for(let i=0; i<aLi.length; i++){
+        //     aLi[i].onclick = function(){
+        //         console.log(i);
+        //     }
+        // }
+    </script>
+</body>
+</html>
