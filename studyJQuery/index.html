@@ -8,11 +8,26 @@
     <script src="./jquery-1.12.4.js"></script>
 </head>
 <body>
-    <div id="div1">
-
-    </div>
+    <input type="checkbox">足球
+    <input type="checkbox">篮球
+    <input type="checkbox">羽毛球
+    <input type="checkbox">乒乓球
+    <button id="all">全选</button>
+    <button id="unAll">全不选</button>
+    <button id="fan">反选</button>
     <script>
-        $("#div1").html('12345');
+        $('#all').on('click', function(){
+            $(':checkbox').prop('checked', true);
+        })
+        $('#unAll').on('click', function(){
+            $(':checkbox').prop('checked', false);
+        })
+        $('#fan').on('click', function(){
+            $(':checkbox').each(function(index, element){
+                // element.checked = !element.checked;
+                $(element).prop('checked', !$(element).prop('checked'));
+            })
+        })
     </script>
 </body>
 </html>
