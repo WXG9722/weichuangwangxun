@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-1.12.4.js"></script>
+    <style>
+        div{
+            width: 300px;
+            height: 500px;
+            border: 1px solid #000;
+            float: left;
+            margin-right: 100px;
+        }
+        select{
+            width: 300px;
+            height: 500px;
+            font-size: 40px;
+        }
+        button{
+            width: 140px;
+            height: 40px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="one">
+        <select class="s1" multiple="multiple">
+            <option value="">1</option>
+            <option value="">2</option>
+            <option value="">3</option>
+            <option value="">4</option>
+            <option value="">5</option>
+            <option value="">6</option>
+            <option value="">7</option>
+            <option value="">8</option>
+        </select>
+        <button id="addR">选中添加到右边</button>
+        <button id="addAllr">全部添加到右边</button>
+    </div>
+    <div class="two">
+        <select class="s2" multiple="multiple">
+            <option value="">9</option>
+        </select>
+        <button id="addL">选中添加到左边</button>
+        <button id="addAlll">全部添加到左边</button>
+    </div>
+    <script>
+        $('#addR').on('click',function(){
+            $('.s1 option:selected').appendTo('.s2');
+            $('.s2 option').prop('selected', false);
+        })
+        $('#addAllr').on('click',function(){
+            $('.s1 option').appendTo('.s2');
+            $('.s2 option').prop('selected', false);
+        })
+        $('#addL').on('click',function(){
+            $('.s2 option:selected').appendTo('.s1');
+            $('.s1 option').prop('selected', false);
+        })
+        $('#addAlll').on('click',function(){
+            $('.s2 option').appendTo('.s1');
+            $('.s1 option').prop('selected', false);
+        })
+
+        $('.s1').on('dblclick', function(){
+            $('.s1 option:selected').appendTo('.s2');
+            $('.s2 option').prop('selected', false);
+        })
+        $('.s2').on('dblclick', function(){
+            $('.s2 option:selected').appendTo('.s1');
+            $('.s1 option').prop('selected', false);
+        })
+    </script>
+</body>
+</html>
