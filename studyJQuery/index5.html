@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-1.12.4.js"></script>
+    <style>
+        div{
+            position: relative;
+        }
+        .a{
+            width: 30px;
+            height: 20px;
+            background-color: #fff;
+            border: 1px solid #000;
+            font-size: 15px;
+            float: left;
+            margin-right: 5px;
+        }
+        .content{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            position: absolute;
+            top: 22px;
+            left: 0;
+            display: none;
+        }
+        .selected{
+            background-color: #ff0036;
+        }
+        .active{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="tab-menu">
+            <div class="a selected">时事</div>
+            <div class="a">体育</div>
+            <div class="a">娱乐</div>
+        </div>
+        <div class="tab-box">
+            <div class="content active">时事</div>
+            <div class="content">体育</div>
+            <div class="content">娱乐</div>
+        </div>
+    </div>
+    <script>
+        $('.a').on('click', function(){
+            $(this).addClass('selected').siblings().removeClass('selected');
+            $('.content').eq($(this).index()).addClass('active').siblings().removeClass('active');
+        })
+    </script>
+</body>
+</html>
