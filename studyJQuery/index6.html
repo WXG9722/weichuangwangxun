@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-1.12.4.js"></script>
+    <style>
+       
+    </style>
+</head>
+<body>
+    <script>
+        $('.editable').on('click', function(){
+            if($(this).find('input').size()<=0){
+                var $val = $(this).html();
+                $(this).html('<input calss="txt" value="'+ $val +'"></input>');
+                $(this).children().trigger('select');
+            }
+        })
+        //  input是后生成的元素 所以需要事件委托
+        $('.editable').on('keyup', 'input', function(e){
+            if(e.which == 13){
+                var val = $(this).val();
+                $(this).parent().html(val);
+            }
+        })
+        // $('.editable').on('blur', 'input', function(e){
+        //     var val = $(this).val();
+        //     $(this).parent().html(val);
+        // })
+        // keyup是键盘抬起事件 e.which表示键盘编码 相当于原生的keycode
+    </script>
+</body>
+</html>
