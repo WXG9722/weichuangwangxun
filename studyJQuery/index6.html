@@ -7,10 +7,60 @@
     <title>Document</title>
     <script src="./jquery-1.12.4.js"></script>
     <style>
-       
+        body {
+            font-size: 16px;
+        }
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 400px;
+        }
+
+        table td,
+        th {
+            width: 50%;
+            border: 1px solid black;
+            height: 30px;
+        }
+
+        tbody th {
+            background-color: #abc;
+        }
+        .txt{
+            border:none;
+        }
     </style>
 </head>
 <body>
+     <table>
+        <thead>
+            <tr>
+                <th colspan="2"> 鼠标点击表格就可以编辑</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>学号</th>
+                <th>姓名</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td class="editable">张三</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td class="editable">李四</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td class="editable">王五</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td class="editable">赵六</td>
+            </tr>
+        </tbody>
+    </table>
     <script>
         $('.editable').on('click', function(){
             if($(this).find('input').size()<=0){
