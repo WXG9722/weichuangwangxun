@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+
+        }
+        #div1, #div2{
+            width: 960px;
+            height: 100px;
+            margin: 30px auto 0;
+            background-color: #cccccc;
+            font-size: 20px;
+            color: #000000;
+            text-align: center;
+            line-height: 100px;
+        }
+        #img-box{
+            width: 960px;
+            margin: 50px auto 0;
+        }
+        #img-box img{
+            width: 100%;
+        }
+        .img2, .img3{
+            display: none;
+        }
+        .content{
+            width: 960px;
+            margin: 0 auto;
+            color: #fff;
+        }
+        .left{
+            width: 630px;
+            height: 300px;
+            background-color: blue;
+            float: left;
+            display: table;
+        }
+        .right{
+            width: 300px;
+            height: 300px;
+            background-color: red;
+            float: right;
+            display: table;
+        }
+        .left p, .right p{
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .img{
+            background-image: url(img/01.jpg);
+            background-repeat: no-repeat;
+            height: 540px;
+            background-size: 100%;
+        }
+        @media screen and (max-width:960px){
+            #div1, #div2{
+                width: 100%;
+            }
+            #img-box{
+                width: 100%;
+            }
+            .img{
+                background-image: url(img/01_s_2x.jpg);
+                background-repeat: no-repeat;
+                padding-top: 56%; /* 百分比相对于父元素的宽 这样可以使height动态变化 这里因为图片是1366*768 所以高总是宽的56%  */
+                height: 0;
+            }
+            .img1{
+                display: none;
+            }
+            .img2{
+                display: block;
+            }
+            .content{
+                width: 100%;
+            }
+            .left{
+                width: 66%;
+            }
+            .right{
+                width: 31%;
+            }
+        }
+        @media screen and (max-width:480px){
+            #div1, #div2{
+                width: 100%;
+            }
+            #img-box{
+                width: 100%;
+            }
+            .img2{
+                display: none;
+            }
+            .img3{
+                display: block;
+            }
+            .img{
+                background-image: url(img/01_s.jpg);
+                background-repeat: no-repeat;
+                padding-top: 50;
+                height: 0;
+            }
+            .content{
+                width: 100%;
+            }
+            .left{
+                width: 100%;
+            }
+            .right{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 响应式页面优化 -->
+    <div id="div1">
+        页头
+    </div>
+    <div id="div2">
+        标题
+    </div>
+    <div id="img-box">
+        <!-- 使用background-img -->
+        <div class="img"></div>
+    </div>
+    <div class="content">
+        <div class="left">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sem erat, egestas quis luctus ut, rhoncus vitae risus. Integer venenatis libero sit amet sapien dictum, quis bibendum mi volutpat. Cras pretium quam quis magna facilisis, eget feugiat nisi lacinia.</p>
+        </div>
+        <div class="right">
+            <p>Donec dolor arcu, interdum sed turpis faucibus, placerat ultricies felis. Donec pulvinar gravida rhoncus. Suspendisse vestibulum est eget dolor lobortis.</p>
+        </div>
+    </div>
+</body>
+</html>
