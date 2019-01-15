@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-1.12.4.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .carousel-map{
+            width: 1180px;
+            height: 500px;
+            position: relative;
+            overflow: hidden;
+
+        }
+        ul{
+            position: absolute;
+            top: 470px;
+            left: 0px;
+        }
+        li{
+            list-style: none;
+            float: left;
+            background-color: yellow;
+            width: 30px;
+            height: 30px;
+            margin-right: 5px;
+            text-align: center;
+            line-height: 30px;
+        }
+        .img-box{
+            width: 9440px;
+            height: 500px;
+            position: relative;
+        }
+        img{
+            width: 1180px;
+            height: 500px;
+            float: left;
+        }
+        .selected{
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <!-- 轮播图 -->
+    <div class="carousel-map">
+        <div class="img-box">
+            <img src="./carousel1.jpg" alt="">
+            <img src="./carousel2.jpg" alt="">
+            <img src="./carousel3.jpg" alt="">
+            <img src="./carousel4.jpg" alt="">
+            <img src="./carousel5.jpg" alt="">
+            <img src="./carousel6.jpg" alt="">
+            <img src="./carousel7.jpg" alt="">
+            <img src="./carousel8.jpg" alt="">
+        </div>
+        <ul class="select-box">
+            <li class="selected">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+        </ul>
+    </div>
+    <script>
+        var timer;
+        var iNow = 0;
+        $('li').on('click', function(){
+            change($(this).index());
+        })
+        function change(index){
+            $('li').eq(index).addClass('selected').siblings().removeClass('selected');
+            $('.img-box').stop().animate({
+                left: -index * $('img').width()
+            }, 500);
+        }
+        function run(){
+            timer = setInterval(function(){
+                iNow++;
+                if(iNow == $('img').length){
+                    iNow = 0;
+                }
+                change(iNow);
+            },1000)
+        }
+        run();
+        $('.carousel-map').on('mouseover', function(){
+            clearInterval(timer);
+        })
+        $('.carousel-map').on('mouseout', function(){
+            run();
+        })
+    </script>
+</body>
+</html>

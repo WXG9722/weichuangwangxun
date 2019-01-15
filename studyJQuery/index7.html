@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-1.12.4.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #container{
+            width: 500px;
+            height: 500px;
+            margin: 50px;
+        }
+        ul{
+            overflow: hidden;
+        }
+        li{
+            list-style: none;
+            width: 14px;
+            height: 14px;
+            float: left;
+            margin-right: 10px;
+            background-image: url(theme.gif);
+            background-repeat: no-repeat;
+        }
+        .news{
+            width: 100px;
+            height: 40px;
+            background-color: #ff0000;
+            float: left;
+            margin-right: 10px;
+            margin-top: 10px;
+            line-height: 40px;
+            text-align: center;
+            color: #ffffff;
+        }
+        li:nth-child(2){
+            background-position: -100px 0;
+        }
+        li:nth-child(3){
+            background-position: -80px 0;
+        }
+        li:nth-child(4){
+            background-position: -60px 0;
+        }
+        li:nth-child(5){
+            background-position: -40px 0;
+        }
+        li:nth-child(6){
+            background-position: -20px 0;
+        }
+        li:nth-child(1).active{
+            background-position: 0 -15px;
+        }
+        li:nth-child(2).active{
+            background-position: -100px -15px;
+        }
+        li:nth-child(3).active{
+            background-position: -80px -15px;
+        }
+        li:nth-child(4).active{
+            background-position: -60px -15px;
+        }
+        li:nth-child(5).active{
+            background-position: -40px -15px;
+        }
+        li:nth-child(6).active{
+            background-position: -20px -15px;
+        }
+        .c0{
+            background-color: #999999;
+        }
+        .c1{
+            background-color: #ba3ad9;
+        }
+        .c2{
+            background-color: #e11355;
+        }
+        .c3{
+            background-color: #08bece;
+        }
+        .c4{
+            background-color: #fba90d;
+        }
+        .c5{
+            background-color: #b1d410;
+        }
+    </style>
+</head>
+<body>
+    <!-- 网页换肤 -->
+    <div id="container">
+        <ul>
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div class="news c0">时事新闻</div>
+        <div class="news c0">娱乐新闻</div>
+    </div>
+    <script>
+        $('li').on('click', function(){
+            $(this).addClass('active').siblings().removeClass('active');
+            // if($($('.news').attr('class').match('c')).size()>0){
+            //     for(var i=0; i<$('li').length; i++){
+            //         $('.news').removeClass('c'+ i);
+            //     }
+            // }
+            // $('.news').addClass('c'+ ($(this).index()));
+            $('.news').attr('class', 'news c' + $(this).index());
+        })
+    </script>
+</body>
+</html>
