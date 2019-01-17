@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>哈尔滨美团网-哈尔滨美食_酒店_旅游_团购_电影_吃喝玩乐</title>
+    <script src="./rem.js"></script>
+    <style>
+        body{
+            font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+            font-size: 0.4rem;
+            background-color: #f0efed;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        .header{
+            background-color: #06c1ae;
+            height: 1.01rem;
+            border-bottom: 1px solid #21897d;
+            display: flex;
+        }
+        .search{
+            flex-grow: 1; 
+        }
+        .city{
+            width: 1.67rem;
+            height: 1.01rem;
+            font-size: 0.32rem;
+        }
+        .mine{
+            width: 0.94rem;
+            height: 1.01rem;
+            font-size: 0.2rem;
+        }
+        .header a{
+            height: 1.01rem;
+            color: #fff;
+            line-height: 1.01rem;
+            margin: 0 0.2rem;
+        }
+        .img-banner img{
+            width: 100%;
+            height: 100%;
+        }
+        .list{
+            height: 3.6rem;
+            background-color: #fff;
+        }
+        .list li{
+            float: left;
+            padding: 0.2rem 0;
+            width: 20%;
+            text-align: center;
+        }
+        .circle{
+            display: block;
+            width: 0.8rem;
+            height: 0.8rem;
+            background-color: #fed030;
+            border-radius: 50%;
+            margin: 0 auto;
+        }
+        .description{
+            font-size:.24rem;
+        }
+        .like{
+            margin-top: 0.2rem;
+            background-color: #fff;
+            padding-left: 0.2rem;
+        }
+        .like h2{
+            font-weight: 400;
+            font-size: 0.34rem;
+            height: 0.34rem;
+            line-height: 0.34rem;
+            width: 6.4rem;
+            padding: 0.28rem 0.2rem 0.2rem 0;
+            border-bottom: 1px solid #f0efed;
+        }
+        .like li{
+            margin-top: 0.28rem;
+            display: flex;
+            border-bottom: 1px solid #f0efed;
+        }
+        .like img{
+            width: 1.8rem;
+            height: 1.8rem;
+        }
+        .like .like-description{
+            margin-left: 0.1rem;
+            flex-grow: 1;
+        }
+        .like-description-header{
+            padding-top: .1rem;
+            margin-bottom: .12rem;
+            font-size: .3rem;
+            font-weight: 400;
+            color: #333;
+        }
+        .like-description-detail{
+            font-size: .24rem;
+            height: .68rem;
+            margin-bottom: .1rem;
+            color: #666;
+        }
+        .price{
+            font-size: .38rem;
+            color: #06c1ae;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="city">
+            <a href="#">哈尔滨</a>
+        </div>
+        <input class="search" type="text">
+        <div class="mine">
+            <a href="#">我的</a>
+        </div>
+    </div>
+    <div class="img-banner">
+        <img src="./img/download_banner.png" alt="">
+    </div>
+    <div class="list">
+        <ul>
+            <li>
+                <span class="circle"></span>
+                <span class="description">美团</span>
+            </li>
+            <li>
+                <span class="circle"></span>
+                <span class="description">美团</span>
+            </li>
+            <li>
+                <span class="circle"></span>
+                <span class="description">美团</span>
+            </li>
+            <li>
+                <span class="circle"></span>
+                <span class="description">美团</span>
+            </li>
+            <li>
+                <span class="circle"></span>
+                <span class="description">美团</span>
+            </li>
+            <li>
+                <span class="circle"></span>
+                <span class="description">美团</span>
+            </li>
+            <li>
+                <span class="circle"></span>
+                <span class="description">美团</span>
+            </li>
+            <li>
+                <span class="circle"></span>
+                <span class="description">美团</span>
+            </li>
+            <li>
+                <span class="circle"></span>
+                <span class="description">美团</span>
+            </li>
+            <li>
+                <span class="circle"></span>
+                <span class="description">美团</span>
+            </li>
+        </ul>
+    </div>
+    <div class="like">
+        <h2>猜你喜欢</h2>
+        <ul class="like-list">
+            <li>
+                <img src="./img/like1.jpg" alt="">
+                <div class="like-description">
+                    <div class="like-description-header">紫悦东方养生水汇</div>
+                    <div class="like-description-detail">[哈西宜家家居]门票+搓澡</div>
+                    <div class="price">123元</div>
+                </div>
+            </li>
+            <li>
+                <img src="./img/like1.jpg" alt="">
+                <div class="like-description">
+                    <div class="like-description-header">紫悦东方养生水汇</div>
+                    <div class="like-description-detail">[哈西宜家家居]门票+搓澡</div>
+                    <div class="price">123元</div>
+                </div>
+            </li>
+            <li>
+                <img src="./img/like1.jpg" alt="">
+                <div class="like-description">
+                    <div class="like-description-header">紫悦东方养生水汇</div>
+                    <div class="like-description-detail">[哈西宜家家居]门票+搓澡</div>
+                    <div class="price">123元</div>
+                </div>
+            </li>
+            <li>
+                <img src="./img/like1.jpg" alt="">
+                <div class="like-description">
+                    <div class="like-description-header">紫悦东方养生水汇</div>
+                    <div class="like-description-detail">[哈西宜家家居]门票+搓澡</div>
+                    <div class="price">123元</div>
+                </div>
+            </li>
+            <li>
+                <img src="./img/like1.jpg" alt="">
+                <div class="like-description">
+                    <div class="like-description-header">紫悦东方养生水汇</div>
+                    <div class="like-description-detail">[哈西宜家家居]门票+搓澡</div>
+                    <div class="price">123元</div>
+                </div>
+            </li>
+            <li>
+                <img src="./img/like1.jpg" alt="">
+                <div class="like-description">
+                    <div class="like-description-header">紫悦东方养生水汇</div>
+                    <div class="like-description-detail">[哈西宜家家居]门票+搓澡</div>
+                    <div class="price">123元</div>
+                </div>
+            </li>
+            <li>
+                <img src="./img/like1.jpg" alt="">
+                <div class="like-description">
+                    <div class="like-description-header">紫悦东方养生水汇</div>
+                    <div class="like-description-detail">[哈西宜家家居]门票+搓澡</div>
+                    <div class="price">123元</div>
+                </div>
+            </li>
+            <li>
+                <img src="./img/like1.jpg" alt="">
+                <div class="like-description">
+                    <div class="like-description-header">紫悦东方养生水汇</div>
+                    <div class="like-description-detail">[哈西宜家家居]门票+搓澡</div>
+                    <div class="price">123元</div>
+                </div>
+            </li>
+            <li>
+                <img src="./img/like1.jpg" alt="">
+                <div class="like-description">
+                    <div class="like-description-header">紫悦东方养生水汇</div>
+                    <div class="like-description-detail">[哈西宜家家居]门票+搓澡</div>
+                    <div class="price">123元</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
