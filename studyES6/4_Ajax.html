@@ -10,25 +10,25 @@
     <script>
         var ajax = function(){
            // 1.创建XMLHttpRequest对象
-            let xmlhttp;
+            let xhr;
             let movieURL = 'https://bird.ioliu.cn/v2?url=https://api.douban.com/v2/movie/top250';
             if(window.XMLHttpRequest){
-                xmlhttp = XMLHttpRequest();
+                xhr = new XMLHttpRequest();
             }else{
-                xmlhttp = ActiveXObject('Microsoft.XMLHTTP');
+                xhr = new ActiveXObject('Microsoft.XMLHTTP');
             }
             // 2.向服务器发送请求 open中参数分别是请求方式 地址 是否异步
             // GET
-            xmlhttp.open('GET', movieURL, true);
-            xmlhttp.send();
+            xhr.open('GET', movieURL, true);
+            xhr.send();
             // POST
-            // xmlhttp.open('POST', movieURL, true);
-            // xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-            // xmlhtto.send();
+            // xhr.open('POST', movieURL, true);
+            // xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            // xhr.send();
             // 3.服务器响应
-            xmlhttp.addEventListener('readystatechange', ()=>{
-                if(xmlhttp.readyState == 4 && xml.status == 200){
-                    let obj = JSON.parse(xmlhttp.responseText);
+           xhr.addEventListener('readystatechange', ()=>{
+                if(xhr.readyState == 4 && xml.status == 200){
+                    let obj = JSON.parse(xhr.responseText);
                 }
             }); 
         }
