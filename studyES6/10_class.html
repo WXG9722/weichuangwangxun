@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var Person = function(name){
+            this.name = name;
+        }
+        Person.prototype.say = function(){
+            console.log('haha');
+        }
+        var p1 = new Person('zs');
+        p1.say();
+        // 继承
+        var Coder = function(name, job){
+            Person.call(this, name);
+            this.job = job;
+        }
+        Coder.prototype = Object.create(Person.prototype);
+        Coder.prototype.constructor = Coder;
+        // Coder.prototype = new Person();
+        // Coder.prototype.constructor = Coder;
+        var c1 = new Coder('ls', 'coder');
+        console.log(c1.name, c1.job, c1.constructor, c1.__proto__);
+    </script>
+</body>
+</html>
