@@ -27,6 +27,34 @@
         // Coder.prototype.constructor = Coder;
         var c1 = new Coder('ls', 'coder');
         console.log(c1.name, c1.job, c1.constructor, c1.__proto__);
+        // ES6
+        class Car {
+            constructor(name, loc){
+                this.name = name;
+                this.loc = loc;
+            }
+            move(){
+                this.loc++;
+            }
+        }
+        class Van extends Car {
+            constructor(name, loc, year){
+                super(name, loc);
+                this.year = year;
+            }
+            // 静态方法 通过类调用
+            static eat(){
+                console.log('eating......');
+            }
+        }
+        var c1 = new Car('benz', 4);
+        var v1 = new Van('honda', 5, 2018);
+        c1.move();
+        v1.move();
+        console.log(c1.loc);
+        console.log(v1.loc);
+        console.log(v1.year);
+        Van.eat();
     </script>
 </body>
 </html>
