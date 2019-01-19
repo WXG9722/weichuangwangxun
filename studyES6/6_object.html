@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var name = 'zhangsan';
+        var age = 20;
+        var sc = 'school';
+        var obj1 = {
+            name: name,
+            age: age,
+            say(){
+                console.log('nmsl');
+            }
+        }
+        var obj2 = {
+            name,
+            age
+        }
+        var obj3 = {
+            [sc]: 'weichuang'
+        }
+
+        console.log(+0 === -0);
+        console.log(NaN === NaN);
+        console.log(Object.is(+0, -0));
+        console.log(Object.is(NaN, NaN));
+
+        var obj4 = {...obj1, ...obj2};
+        console.log(Object.assign(obj1, obj2));
+
+        console.log(age in obj1);
+    </script>
+</body>
+</html>

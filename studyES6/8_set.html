@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let b = [1,2,3,4,2,3,5,6]
+        let a = new Set(b);// set中不允许有重复的元素 利用这一点可以给数组去重
+        console.log(a);
+        console.log([...a]);
+
+        // 数组去重
+        var result = [];
+        // 第一种方法
+        // [for(val of b){
+        //     if(!result.includes(val)){
+        //         result.push(val);
+        //     }
+        // }
+        // console.log(result);
+        // 第二种方法
+        // for(val of b){
+        //     if(result.indexOf(val) == -1){
+        //         result.push(val);
+        //     }
+        // }
+        // console.log(result);
+
+        // a.add(10);
+        // a.delete(10);
+        // a.clear();
+        // a.has(3);
+        // a.size;
+    </script>
+</body>
+</html>
