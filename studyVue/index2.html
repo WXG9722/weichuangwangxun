@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul,li{
+            list-style: none;
+        }
+        h2{
+            text-align: center;
+        }
+        #app{
+            width: 700px;
+            height: 500px;
+
+            margin: 80px auto;
+        }
+        li{
+            width: 700px;
+            height: 60px;
+            margin-top: 10px;
+            background-color: pink;
+            line-height: 60px;
+        }
+        .active{
+            background-color: yellow;
+        }
+        .left{
+            margin-left: 10px;
+            float: left;
+        }
+        .right{
+            margin-right: 10px;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h2>services</h2>
+        <ul>
+            <li :class="{active: item.isA}" @click="choose(item)" v-for="(item) in list">
+                <span class="left">{{item.name}}</span>
+                <span class="right">{{item.price}}</span>
+            </li>
+        </ul>
+        <h2 >total:{{total}}</h2>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                list: [
+                    {
+                        name: 'a',
+                        price: 123,
+                        isA: false
+                    },
+                    {
+                        name: 'a',
+                        price: 123,
+                        isA: false
+                    },
+                    {
+                        name: 'a',
+                        price: 123,
+                        isA: false
+                    },
+                    {
+                        name: 'a',
+                        price: 123,
+                        isA: false
+                    },
+                    {
+                        name: 'a',
+                        price: 123,
+                        isA: false
+                    },
+                ],
+                total: 0
+            },
+            methods: {
+                choose(item){
+                    this.total = 0;
+                    item.isA = !item.isA;
+                    for(let i=0; i<this.list.length; i++){
+                        if(this.list[i].isA){
+                            this.total += item.price;
+                        }
+                    }
+                }
+            },
+            
+        })
+    </script>
+</body>
+</html>

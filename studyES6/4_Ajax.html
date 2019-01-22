@@ -26,8 +26,8 @@
             // xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
             // xhr.send();
             // 3.服务器响应
-           xhr.addEventListener('readystatechange', ()=>{
-                if(xhr.readyState == 4 && xml.status == 200){
+            xhr.addEventListener('readystatechange', ()=>{
+                if(xhr.readyState == 4 && xhr.status == 200){
                     let obj = JSON.parse(xhr.responseText);
                 }
             }); 

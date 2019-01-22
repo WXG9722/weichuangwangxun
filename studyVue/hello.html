@@ -5,17 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src="vue.js"></script>
+    <style>
+        .div1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        .div2{
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
-        <div v-text="msg"></div>
+        <div class="div1" @click="change1()">
+            <div class="div2" @click.stop="change2()"></div>
+        </div>
+
+        <input v-model="msg" type="text">
+        <h2>{{msg}}</h2>
+
+        <input v-model="sex" id="male" value="male" type="radio">
+        <label for="male">男</label>
+        <input v-model="sex" id="female" value="female" type="radio">
+        <label for="female">女</label>
+        <h2>{{sex}}</h2>
+
+        <input v-model="hobby" id="basketball" value="basketball" type="checkbox">
+        <label for="basketball">篮球</label>
+        <input v-model="hobby" id="football" value="football" type="checkbox">
+        <label for="football">足球</label>
+        <h2>{{hobby}}</h2>
+
+        <select v-model="school">
+            <option disabled value="">请选择</option>
+            <option value="黑大">黑大</option>
+            <option value="哈理工">哈理工</option>
+            <option value="农大">农大</option>
+        </select>
+        <h2>{{school}}</h2>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
     <script>
         new Vue({
             el:"#app",
             data:{
-                msg:"hello world!"
+                msg:"",
+                student: [
+                    {
+                        name: 'wang',
+                        age: 12
+                    },
+                    {
+                        name: 'li',
+                        age: 10
+                    }
+                ],
+                sex: '',
+                hobby: [],
+                school: ''
+            },
+            methods: {
+                change1(){
+                    console.log('div1');
+                },
+                change2(){
+                    console.log('div2');
+                }
             }
         })
     </script>
