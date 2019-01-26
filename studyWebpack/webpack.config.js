@@ -3,6 +3,8 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const glob = require('glob');
+const PurifyCSSPlugin = require('purifycss-webpack');
 
 module.exports = {
     mode: 'development',
@@ -17,8 +19,6 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         // 在dist中生成的被打包好的文件 [name]表示与入口自定义的名字相同
         filename: '[name].js',
-        // 公共路径（分离css时 图片是背景图片 会出现路径问题 公共路径可以解决这个问题）
-        publicPath: 'http://localhost.8081/'
     },
      // 服务
      devServer: {
@@ -51,35 +51,79 @@ module.exports = {
             hash: true,
             // 是要打包的html模板路径和文件名称
             template: './src/index.html',
-            filename: 'index.html',
+            filename: 'test.html',
         }),
-        new ExtractTextPlugin('index.css')
+        new ExtractTextPlugin('./css/index.css'),
+        // 清除未使用的css
+        new PurifyCSSPlugin({
+            paths: glob.sync(path.join(__dirname, 'src/*.html'))
+        })
     ],
     // 模块：例如解读css 图片如何转换 压缩
     module: {
         rules: [
+            // {
+            //     // css打包与分离
+            //     test: /\.css$/,// 正则表达式 匹配.css后缀文件
+            //     // use: ['style-loader', 'css-loader']
+            //     //分离css
+            //     use: ExtractTextPlugin.extract({
+            //         fallback: 'style-loader',
+            //         use: 'css-loader'
+            //     })
+            // },
             {
-                // 打包css文件
-                test: /\.css$/,// 正则表达式 匹配.css后缀文件
-                // use: ['style-loader', 'css-loader']
-                //分离css
+                // sass打包与分离
+                test: /\.scss$/,
+                // use: ['style-loader', 'css-loader', 'sass-loader']
+                // 分离sass
                 use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: 'css-loader'
+                    use: ['css-loader', 'sass-loader'],
+                    fallback: 'style-loader'
                 })
             },
             {
                 // css中引用图片
-                test: /\.(png|jpg|gif)/,
+                test: /\.(png|jpg|gif)$/,
                 use: [{
                     loader: 'url-loader',
                     options: {
                         limit: 500,
-                        // 输出路径 images文件夹下的图片
+                        // 输出路径 img文件夹下的图片
                         outputPath: 'img/'
                     }
                 }]
             },
+            {
+                // html文件中的图片打包
+                test: /\.htm|html$/i,
+                loader: 'html-withimg-loader'
+            },
+            {
+                // css3前缀 使用时需要注释掉css打包分离
+                test: /\.css$/,
+                // use: ['style-loader', 'css-loader']
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: [{
+                        loader: 'css-loader',
+                        options: {importLoaders: 1}
+                    }, 'postcss-loader']
+                })
+            },
+            {
+                // babel es6转es5
+                test: /\.js$/,
+                use: [
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ["@babel/preset-env"]
+                        }
+                    }
+                ],
+                exclude: /node_modules/
+            }
         ]
     },
 }

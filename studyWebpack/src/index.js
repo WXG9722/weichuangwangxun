@@ -1,4 +1,6 @@
-import css from './index.css';
+import css from './css/index.css';
+import sass from './css/common.scss';
 
-var oDiv = document.getElementsByTagName('div')[0];
-oDiv.innerHTML = '31653'
+let a = 5;
+console.log(a);
+// oDiv.innerHTML = '31653'
