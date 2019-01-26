@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div id="app">
+        <label for="choose">是否需要额外付费设施</label>
+        <input @click="clear" v-model="show" id="choose" type="checkbox">
+        <ul v-show="show">
+            <li v-for="(obj, index) in produstList">
+                <label :for="obj.name">{{obj.name}}({{obj.price}})</label>
+                <input v-model="chooseList" :value="obj
+                
+                
+                
+                
+                " type="checkbox" :id="obj.name">
+            </li>
+        </ul>
+        <h3>订单费用信息</h3>
+        <ul>
+            <li v-for="(obj, index) in chooseList">
+                {{obj.name}}({{obj.price}})
+            </li>
+        </ul>
+        <h3>总金额：{{total()}}</h3>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                produstList: [
+                    {
+                        name: '沙发',
+                        price: 100
+                    },
+                    {
+                        name: '床',
+                        price: 200
+                    },
+                    {
+                        name: 'wifi',
+                        price: 30
+                    }
+                ],
+                chooseList: [
+                    {
+                        name: '群力花园豪华型',
+                        price: 400
+                    }
+                ],
+                show: false,
+            },
+            methods: {
+                clear(){
+                    this.chooseList.splice(1);
+                },
+                total(){
+                    let total = 0;
+                    this.chooseList.forEach((obj, index)=>{
+                        total += obj.price;
+                    });
+                    return total;
+                },
+            },
+        })
+    </script>
+</body>
+</html>

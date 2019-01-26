@@ -89,8 +89,8 @@
             },
             methods: {
                 choose(item){
-                    this.total = 0;
                     item.isA = !item.isA;
+                    this.total = 0;
                     for(let i=0; i<this.list.length; i++){
                         if(this.list[i].isA){
                             this.total += item.price;
