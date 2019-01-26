@@ -5,6 +5,7 @@ const HtmlPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const glob = require('glob');
 const PurifyCSSPlugin = require('purifycss-webpack');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     mode: 'development',
@@ -57,7 +58,16 @@ module.exports = {
         // 清除未使用的css
         new PurifyCSSPlugin({
             paths: glob.sync(path.join(__dirname, 'src/*.html'))
-        })
+        }),
+        // 引入第三方类库 并且这种方式是使用了才会引入 推荐
+        new webpack.ProvidePlugin({
+            $: 'jquery'
+        }),
+        // 资源拷贝 不打包（如文档）
+        new CopyWebpackPlugin([{
+            from: __dirname + '/src/public',
+            to: './public'
+        }])
     ],
     // 模块：例如解读css 图片如何转换 压缩
     module: {
