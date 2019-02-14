@@ -21,7 +21,10 @@ export default new Vuex.Store({
       return state.count + state.num
     }
   },
+  // 提交的是mutation而不是直接变更状态 但是可以包含异步操作
   actions: {
-
+    addAction({commit}, num){
+      commit('add', num);
+    }
   },
 });
