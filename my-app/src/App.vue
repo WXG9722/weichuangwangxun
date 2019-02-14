@@ -1,6 +1,9 @@
 <template>
   <div id="app">
     <c-header></c-header>
+    <div class="content">
+      <router-view></router-view>
+    </div>
     <c-footer></c-footer>
   </div>
 </template>
@@ -16,5 +19,7 @@ export default {
 }
 </script>
 <style>
-
+.content{
+  margin: 0.8rem 0;
+}
 </style>
