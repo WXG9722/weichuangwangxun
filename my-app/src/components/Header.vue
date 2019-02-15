@@ -1,15 +1,16 @@
 <template>
     <div>
-        <header>
+        <header :style="{background: obj.bgc}">
             <span class="home">首页</span>
-            电影
+            {{obj.name}}
         </header>
     </div>
 </template>
 
 <script>
     export default {
-        
+        // 子组件接收来自父组件App的传来的headerColor 并在在标签中使用 完成了子组件到子组件的传值
+        props: ['obj'],
     }
 </script>
 
