@@ -1,6 +1,6 @@
 <template>
     <div>
-        <aplayer autoplay :music="list[0]" :list="list" v-if="isShow"/>
+        <aplayer autoplay :music="list[0]" :list="list" v-if="isShow" showLrc/>
     </div>
 </template>
 
@@ -25,7 +25,7 @@ import Axios from 'axios'
                         artist: element.author,
                         src: element.src,
                         pic: element.musicImgSrc,
-                        lrc: element.lrc
+                        lrc: `http://localhost:8080/${element.lrc}`
                     };
                     this.list.push(obj);
                     this.isShow = true;

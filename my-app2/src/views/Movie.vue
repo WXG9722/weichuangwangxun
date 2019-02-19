@@ -1,7 +1,7 @@
 <template>
     <div>
         <ul class="container">
-            <li v-for="(item, index) in movieList" :key="index">
+            <li v-for="(item, index) in movieList" :key="index" @click="goDetail(item.id)">
                 <img :src="item.images.small" alt="">
                 <div class="info">
                     <h4>{{item.title}}</h4>
@@ -53,7 +53,10 @@ import Axios from 'axios'
                     }).catch(err=>{
                         console.log(err);
                     })
-                }, 1500)
+                }, 500)
+            },
+            goDetail(id){
+                this.$router.push('/moviedata/' + id);
             }
         },
     }
