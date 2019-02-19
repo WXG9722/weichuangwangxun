@@ -16,8 +16,8 @@ import {mapState} from 'vuex'
 
 <style scoped>
 header{
-    height: 0.8rem;
-    line-height: 0.8rem;
+    height: 1rem;
+    line-height: 1rem;
     background-color: #000;
     color: #fff;
     text-align: center;
