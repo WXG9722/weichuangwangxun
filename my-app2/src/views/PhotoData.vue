@@ -1,6 +1,6 @@
 <template>
     <div>
-        <router-link to="/photo">
+        <router-link to="/photo" v-if="isShow">
             <v-touch v-on:swipeleft="next" v-on:swiperight="last" class="bg" :style="{backgroundImage:'url(' + photos[iNow].src + ')'}"></v-touch>
         </router-link>
     </div>
@@ -14,11 +14,19 @@ Vue.use(VueTouch, {name: 'v-touch'})
     export default {
         data() {
             return {
-                iNow: this.$route.params.photoId
+                iNow: this.$route.params.photoId,
+                isShow: false,
             }
         },
         computed: {
             ...mapState(['photos'])
+        },
+        created() {
+            if(this.photos.length == 0){
+                this.$router.push('/photo');
+            }else{
+                this.isShow = true;
+            }
         },
         methods: {
             next(){
