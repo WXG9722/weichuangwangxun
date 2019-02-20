@@ -32,7 +32,7 @@ export default {
           name: '书籍',
           bgc: 'pink'
         },{
-          path: '/picture',
+          path: '/photo',
           name: '图片',
           bgc: 'orange'
         }

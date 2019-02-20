@@ -17,14 +17,15 @@
     export default {
         data() {
             return {
-                images:[
-                    "https://img3.doubanio.com/lpic/s24468373.jpg",
-                    "https://img3.doubanio.com/lpic/s27102925.jpg",
-                    "https://img3.doubanio.com/lpic/s6989253.jpg",
-                ],
+                // images:[
+                //     "https://img3.doubanio.com/lpic/s24468373.jpg",
+                //     "https://img3.doubanio.com/lpic/s27102925.jpg",
+                //     "https://img3.doubanio.com/lpic/s6989253.jpg",
+                // ],
                 iNow: 0,
             }
         },
+        props: ['images'],
         created() {
             setInterval(()=>{
                 this.iNow++;

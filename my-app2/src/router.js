@@ -3,10 +3,11 @@ import Router from 'vue-router'
 import Movie from './views/Movie.vue'
 import Music from './views/Music.vue'
 import Book from './views/Book.vue'
-import Picture from './views/Picture.vue'
+import Photo from './views/Photo.vue'
 import MusicList from './views/MusicList.vue'
 import MovieData from './views/MovieData.vue'
 import Slide from './components/Slide.vue'
+import PhotoData from './views/PhotoData.vue'
 
 Vue.use(Router)
 
@@ -27,9 +28,9 @@ export default new Router({
       name: 'book',
       component: Book
     },{
-      path: '/picture',
-      name: 'picture',
-      component: Picture
+      path: '/photo',
+      name: 'photo',
+      component: Photo
     },{
       path: '/musiclist',
       name: 'musiclist',
@@ -42,6 +43,10 @@ export default new Router({
       path: '/slide',
       name: 'slide',
       component: Slide
+    },{
+      path: '/photodata/:photoId',
+      name: 'photodata',
+      component: PhotoData
     }
   ]
 })
