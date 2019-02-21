@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/react.development.js"></script>
+    <script src="./js/react-dom.development.js"></script>
+    <script src="./js/browser.min.js"></script>
+</head>
+<body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+    <div id="div4"></div>
+    <script type="text/babel">
+        let hello = <h1>hello world</h1>
+        // JSX
+        let elem = (
+            <div>
+                <div>
+                    <h1>22222222</h1>
+                </div>
+                <div>
+                    <h2>1111111</h2>
+                    <p>唯创666</p>
+                </div>
+            </div>
+        )
+        ReactDOM.render(hello, document.getElementById('div1'));
+        ReactDOM.render(elem, document.getElementById('div2'));
+        // 组件
+        // 1.函数
+        let Welcome = ()=>{
+            return (
+                <h1>
+                    <h1>
+                        welcome
+                        <input type="text" value="" />
+                    </h1>
+                </h1>
+                
+            )
+        };
+        ReactDOM.render(
+            <Welcome></Welcome>,
+            document.getElementById('div3')
+        );
+        // 2.class
+        class Haha extends React.Component{
+            render(){
+                return <h1>哈哈哈哈</h1>
+            }
+        };
+        ReactDOM.render(
+            <Haha></Haha>,
+            document.getElementById('div4')
+        );
+    </script>
+</body>
+</html>

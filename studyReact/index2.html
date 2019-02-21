@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/react.development.js"></script>
+    <script src="./js/react-dom.development.js"></script>
+    <script src="./js/browser.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        class Count extends React.Component{
+            constructor(props){
+                super(props),
+                this.state = {
+                    num: 1,
+                },
+                // 这边绑定是必要的，这样this才能在回调函数中使用
+                this.addHandle = this.addHandle.bind(this)
+            }
+            addHandle(){
+                this.setState({
+                    num: ++this.state.num,// 前++含义为先加在参与运算 如果为后++则直接参与运算 然后再加
+                })
+            }
+            render(){
+                return(
+                    <div>
+                        <h1>{this.state.num}</h1>
+                        <button onClick={this.addHandle}>add</button>
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(
+            <Count/>,
+            document.getElementById('root')
+        )
+    </script>
+</body>
+</html>
