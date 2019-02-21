@@ -26,7 +26,7 @@
                 if(this.state.soldier >= 20){
                     this.setState({
                         soldier: this.state.soldier - 20,
-                        ['num' + name]: this.state['num' + name] + 20
+                        ['num' + name]: this.state['num' + name] + 20// ES6新语法 表示当属性名或属性值是动态时 可以用这种方法6
                     })
                 }
             }
