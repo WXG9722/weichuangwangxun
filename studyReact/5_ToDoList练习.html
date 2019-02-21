@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/react.development.js"></script>
+    <script src="./js/react-dom.development.js"></script>
+    <script src="./js/browser.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    
+    <script type="text/babel">
+        class Input extends React.Component{
+            constructor(props) {
+                super(props)
+            
+                this.state = {
+                 
+                }
+                this.add = this.add.bind(this)
+
+            }
+            add(){
+                if(this.myInput.value){
+                    this.props.add(this.myInput.value)
+                    this.myInput.value = ''
+                }
+                
+            }
+            render(){
+                return (
+                    <div>
+                        <input type="text" ref={input => {this.myInput = input}}/>
+                        <button onClick={this.add}>add</button>
+                    </div>
+                )
+            }
+        };
+        class List extends React.Component{
+            constructor(props) {
+                super(props)
+            
+                this.state = {
+                 
+                }
+            }
+            render(){
+                // 组件List接收主组件传来的toDoList数组
+                return (
+                    <ul>{
+                        this.props.list.map(function (val,index){
+                            return <li key={index}>{val}</li>
+                        })
+                    }</ul>
+                )
+            }
+        };
+        class MyComponent extends React.Component{
+            constructor(props) {
+                super(props)
+                this.state = {
+                    list: ['吃饭', '睡觉', '学习']
+                }
+                this.addHandler = this.addHandler.bind(this)
+            }
+            addHandler(val){
+                let list = [...this.state.list];
+                list.push(val)
+                this.setState({
+                    list// ES6简写 当属性名与属性值一样时 不简写为list: list
+                })
+            }
+            render(){
+                // List将其state中toDoList数组传值
+                return (
+                    <div>
+                        <h1>Simple To Do List</h1>
+                        <Input add={this.addHandler}/>
+                        <List list={this.state.list}/>
+                        
+                    </div>
+                )
+            }
+        };
+        ReactDOM.render(
+            <MyComponent/>,
+            document.getElementById('root')
+        );
+    </script>
+</body>
+</html>
