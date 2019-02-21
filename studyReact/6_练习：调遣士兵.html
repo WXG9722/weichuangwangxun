@@ -22,12 +22,15 @@
                 }
                 this.change = this.change.bind(this)
             }
-           change(name){
-                if(this.state.soldier >= 20){
+            change(name, num){
+                num = parseInt(num)
+                if(this.state.soldier >= num){
                     this.setState({
-                        soldier: this.state.soldier - 20,
-                        ['num' + name]: this.state['num' + name] + 20// ES6新语法 表示当属性名或属性值是动态时 可以用这种方法6
+                        soldier: this.state.soldier - num,
+                        ['num' + name]: this.state['num' + name] + num// ES6新语法 当属性名或属性值是动态时 可以用这种方法
                     })
+                }else{
+                    alert('剩余士兵数量不足！')
                 }
             }
             render(){
@@ -41,21 +44,14 @@
             }
         }
         class General extends React.Component{
-            constructor(props) {
-                super(props)
-                this.state = {
-
-                }
-                this.send = this.send.bind(this)
-            }
-            send(){
-                this.props.change(this.props.name)
-            }
             render(){
                 return (
                     <div>
                         <h1>将军{this.props.name}有士兵:{this.props.num}</h1>
-                        <button onClick={this.send}>调兵</button>
+                        <input type="number" ref={input=>{this.myInput = input}}/>
+                        <button onClick={()=>{
+                            this.props.change(this.props.name, this.myInput.value)
+                        }}>调兵</button>
                     </div>
                 )
             }
