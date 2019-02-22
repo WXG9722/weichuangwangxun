@@ -24,12 +24,15 @@
             }
             change(name, num){
                 num = parseInt(num)
-                if(this.state.soldier >= num){
+                if(this.state.soldier >= num && (this.state['num'+name] >= num)){
                     this.setState({
-                        soldier: this.state.soldier - num,
-                        ['num' + name]: this.state['num' + name] + num// ES6新语法 当属性名或属性值是动态时 可以用这种方法
+                        soldier: this.state.soldier-num,
+                        ['num'+name]: this.state['num'+name]+num// ES6新语法 当属性名或属性值是动态时 可以用这种方法
                     })
-                }else{
+                }else if(!num){
+                    alert('请输入士兵数量！')
+                }
+                else{
                     alert('剩余士兵数量不足！')
                 }
             }

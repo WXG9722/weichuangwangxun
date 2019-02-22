@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/react.development.js"></script>
+    <script src="./js/react-dom.development.js"></script>
+    <script src="./js/browser.min.js"></script>
+    <style>
+        .active{
+            background-color: #f00;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        class Main extends React.Component{
+            constructor(props){
+                super(props)
+                this.state = {
+                    list: [
+                        {
+                            id: 1,
+                            name: '吃饭',
+                            checked: false
+                        },
+                        {
+                            id: 2,
+                            name: '睡觉',
+                            checked: false
+                        },
+                        {
+                            id: 3,
+                            name: '学习',
+                            checked: true
+                        },
+                    ],
+                    show: [
+                        {
+                            id: 1,
+                            name: '吃饭',
+                            checked: false
+                        },
+                        {
+                            id: 2,
+                            name: '睡觉',
+                            checked: false
+                        },
+                        {
+                            id: 3,
+                            name: '学习',
+                            checked: true
+                        },
+                    ]
+                }
+                this.add = this.add.bind(this)
+                this.remove = this.remove.bind(this)
+                this.select = this.select.bind(this)
+                this.search = this.search.bind(this)
+                this.showAll = this.showAll.bind(this)
+            }
+            add(val){
+                if(val){
+                    let list = [...this.state.list]
+                    list.push({id: (new Date().getTime()), name: val, checked: false})
+                    this.setState({
+                        list,
+                        show: list
+                    })
+                }else{
+                    alert('请输入任务名！')
+                }
+            }
+            remove(id){
+                let list = [...this.state.list]
+                let index = list.findIndex((element)=>{
+                    return element.id == id
+                })
+                list.splice(index, 1)
+                this.setState({
+                    list,
+                    show: list
+                })
+            }
+            select(id){
+                let list = [...this.state.list]
+                let index = list.findIndex((element)=>{
+                    return element.id == id
+                })
+                list[index].checked = !list[index].checked
+                this.setState({
+                    list,
+                    show: list
+                })
+            }
+            search(text){
+                if(text){
+                    let list = [...this.state.list]
+                    list = list.filter((element)=>{
+                        return element.name.includes(text)
+                    })
+                    if(list.length != 0){
+                        this.setState({
+                            show:list
+                        })
+                    }else{
+                        alert('未搜索到结果！')
+                    }
+                }else{
+                    alert('请输入关键字！')
+                }
+            }
+            showAll(){
+                this.state.show = this.state.list
+                let show = [...this.state.show]
+                this.setState({
+                    show
+                })
+            }
+            render(){
+                return(
+                    <div>
+                        <h1>todolist</h1>
+                        <Search show={this.state.show} list={this.state.list} search={this.search}/>
+                        <Add add={this.add}/>
+                        <List showAll={this.showAll} show={this.state.show} list={this.state.list} remove={this.remove} select={this.select}/>
+                    </div>
+                )
+            }
+        }
+        class Search extends React.Component{
+            constructor(props){
+                super(props)
+                this.state = {
+
+                }
+                this.search = this.search.bind(this)
+                this.clear = this.clear.bind(this)
+            }
+            clear(){
+                event.target.value = ''
+            }
+            search(){
+                this.props.search(this.myInput.value)
+            }
+            render(){
+                return(
+                    <div>
+                        搜索：<input onFocus={this.clear} type="text" ref={input=>{this.myInput = input}}/>
+                        <button onClick={this.search}>搜索</button>
+                    </div>
+                )
+            }
+        }
+        class Add extends React.Component{
+            constructor(props){
+                super(props)
+                this.state = {
+
+                }
+                this.add = this.add.bind(this)
+                this.clear = this.clear.bind(this)
+            }
+            clear(){
+                event.target.value = ''
+            }
+            add(){
+                this.props.add(this.myInput.value)
+            }
+            render(){
+                return(
+                    <div>
+                        添加：<input onFocus={this.clear} type="text" ref={input=>{this.myInput = input}}/>
+                        <button onClick={this.add}>添加任务</button>
+                    </div>
+                )
+            }
+        }
+        class List extends React.Component{
+            constructor(props){
+                super(props)
+                this.state = {
+
+                }
+                this.showAll = this.showAll.bind(this)
+            }
+            showAll(){
+                this.props.showAll()
+            }
+            render(){
+                return(
+                    <ul>{
+                        this.props.show.map((task, index)=>{
+                            return (
+                                <li key={task.id} className={task.checked? 'active': ''}>
+                                    <input onChange={()=>{
+                                        this.props.select(task.id)
+                                    }} type="checkbox" defaultChecked={task.checked}/>
+                                    <label>{task.name}</label>
+                                    <button onClick={()=>{
+                                        this.props.remove(task.id)
+                                    }}>删除任务</button>
+                                </li>
+                            )
+                        })
+                    }
+                    <p>已完成{
+                        this.props.list.filter(element=>{
+                            return element.checked == true
+                        }).length
+                    }/{this.props.list.length}</p>
+                    <button onClick={this.showAll}>查看全部任务</button>
+                    </ul>
+                )
+            }
+        }
+        ReactDOM.render(
+            <Main/>,
+            document.getElementById('root')
+        )
+    </script>
+</body>
+</html>
