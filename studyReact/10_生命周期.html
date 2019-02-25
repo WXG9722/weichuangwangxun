@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/react.development.js"></script>
+    <script src="./js/react-dom.development.js"></script>
+    <script src="./js/browser.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        class Main extends React.Component{
+            constructor(props) {
+                super(props)
+                this.state = {
+                    opacity: 1
+                }
+            }
+            componentDidMount(){
+                this.timer = setInterval(() => {
+                    if(this.state.opacity <= 0){
+                        this.setState({
+                            opacity: 1
+                        })
+                    }else{
+                        this.setState({
+                            opacity: this.state.opacity - 0.1
+                        })
+                    }
+                }, 200);
+            }
+            componentWillUnmount(){
+                clearInterval(this.timer)
+            }
+            unmount(){
+                ReactDOM.unmountComponentAtNode(document.getElementById('root'))
+            }
+
+            render(){
+                let {opacity} = this.state;
+                return (
+                    <div>
+                        <h1 style={{opacity}}>哈哈哈哈</h1>
+                        <button onClick={this.unmount}>组件卸载</button>
+                    </div>
+                );
+            }
+        }
+        ReactDOM.render(
+            <Main/>,
+            document.getElementById('root')
+        )
+    </script>
+</body>
+</html>
