@@ -17,12 +17,7 @@
         <ul v-show="show">
             <li v-for="(obj, index) in produstList">
                 <label :for="obj.name">{{obj.name}}({{obj.price}})</label>
-                <input v-model="chooseList" :value="obj
-                
-                
-                
-                
-                " type="checkbox" :id="obj.name">
+                <input v-model="chooseList" :value="obj" type="checkbox" :id="obj.name">
             </li>
         </ul>
         <h3>订单费用信息</h3>

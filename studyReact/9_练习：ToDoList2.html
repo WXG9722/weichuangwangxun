@@ -196,10 +196,10 @@
                         this.props.show.map((task, index)=>{
                             return (
                                 <li key={task.id} className={task.checked? 'active': ''}>
-                                    <input onChange={()=>{
+                                    <input id={task.id} onChange={()=>{
                                         this.props.select(task.id)
                                     }} type="checkbox" defaultChecked={task.checked}/>
-                                    <label>{task.name}</label>
+                                    <label htmlFor={task.id}>{task.name}</label>
                                     <button onClick={()=>{
                                         this.props.remove(task.id)
                                     }}>删除任务</button>
