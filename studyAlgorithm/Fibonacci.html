@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const fibonacci = (n) => {
+            var arr = []
+            if(n==1 || n==2){
+                return 1
+            }else{
+                return fibonacci(n-1) + fibonacci(n-2)
+            }
+        }
+        var fibonacciArray = (n) => {
+            var arr = [0]
+            for(let i=1; i<=n; i++){
+                arr.push(fibonacci(i))
+            }
+            return arr
+        }
+        console.log(fibonacciArray(10))
+    </script>
+</body>
+</html>

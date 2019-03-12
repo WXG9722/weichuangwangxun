@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+<<<<<<< HEAD
     <style>
         .parent {
             width: 500px;
@@ -38,5 +39,35 @@
         <div class="child3"></div>
         <div class="child4"></div>
     </div>
+=======
+</head>
+<body>
+    <script>
+        const a = (arr) => {
+            if(arr.length <= 1){
+                return arr[0]
+            }else{
+                var obj = {}
+                for(let i=0; i<arr.length; i++){
+                    if(!obj[arr[i]]){
+                        obj[arr[i]] = 1
+                    }else{
+                        obj[arr[i]] += 1
+                    }
+                }
+                var char = ''
+                var max = 1
+                for(var j in obj){
+                    if(obj[j] >= max){
+                        char = j
+                        max = obj[j]
+                    }
+                }
+            }
+            return char
+        }
+        console.log(a([1,2,3,4,5,6,6,6,6,6]))
+    </script>
+>>>>>>> study
 </body>
 </html>

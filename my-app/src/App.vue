@@ -13,6 +13,11 @@
 <script>
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
+<<<<<<< HEAD
+=======
+import axios from 'axios'
+import mock from '@/mock/mock.js'
+>>>>>>> study
 
 export default {
   data(){
@@ -62,6 +67,16 @@ export default {
       })
       this.obj = result[0];// result是一个数组 filter返回的是数组
     }
+<<<<<<< HEAD
+=======
+
+    axios.get('a')
+    .then(res=>{
+      console.log(res)
+    }).catch(err=>{
+
+    })
+>>>>>>> study
   },
 }
 </script>

@@ -7,18 +7,17 @@
     <title>Document</title>
 </head>
 <body>
-    Calender<input type="datetime-local">
-<<<<<<< HEAD
-=======
-    <p>123</p>
-    <p>456</p>
     <script>
-        var obj = {
-            a: 1,
-            2: 2
+        const deduplication = (arr) => {
+            return arr.filter((element, index, self)=>{
+                return self.indexOf(element) === index
+            })
         }
-        console.log(obj['a'])
     </script>
->>>>>>> study
+    <script>
+        const deduplication2 = (arr) => {
+            return [...new Set(arr)]
+        }
+    </script>
 </body>
 </html>

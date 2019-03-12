@@ -7,6 +7,11 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+<<<<<<< HEAD
+=======
+    "axios": "^0.18.0",
+    "mockjs": "^1.0.1-beta3",
+>>>>>>> study
     "vue": "^2.5.22",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
