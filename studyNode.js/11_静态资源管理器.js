@@ -18,7 +18,7 @@ http.createServer((req, res)=>{
     }else{
         dealWithStatic(pathname, realpath, res)
     }
-}).listen(3000)
+}).listen(80,'127.0.0.1')
 
 console.log('start server')
 
@@ -31,10 +31,15 @@ function goIndex(res){
 function dealWithStatic(pathname, realpath, res){
     // realpath可以显示index2.html的所有关联路径
     // console.log(realpath)
-    fs.exists(realpath, function(exists){
-        if(!exists){
-            res.writeHead(404, {'Content-type':'text/plain'})
-            res.end('404 not found')
+    fs.open(realpath, 'r', function(err, fd){
+        if(err){
+            if(err.code === 'ENOENT'){
+                console.error(pathname + '不存在');
+                res.writeHead(404, {'Contetn-type':'text/plain'})
+                res.end()
+                return;
+            }
+            throw err
         }else{
             var pointPosition = pathname.lastIndexOf('.')
             var mimeString = pathname.substring(pointPosition+1)
