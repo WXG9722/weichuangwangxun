@@ -1,12 +1,12 @@
 var util = require('util')
-var events = require('events')
+var EventEmitter = require('events')
 
 // 继承
 function MyStream(){
-    events.EventEmitter.call(this);
+    EventEmitter.call(this);
 }
 
-util.inherits(MyStream, events.EventEmitter)
+util.inherits(MyStream, EventEmitter)
 MyStream.prototype.write = function(data){
     this.emit('data', data)
 }

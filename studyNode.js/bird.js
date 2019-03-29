@@ -3,10 +3,10 @@ var Animal = require('./animal.js')
 
 function Bird(){
     Animal.call(this)
-    util.inherits(Bird, Animal)
     this.say = function(){
         console.log('zhizhi')
     }
 }
+util.inherits(Bird, Animal)
 
 module.exports = Bird
